@@ -1,0 +1,6 @@
+.DS_Store
+.temp
+*.log
+dist
+node_modules
+.vitepress/dist
