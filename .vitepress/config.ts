@@ -13,6 +13,10 @@ const defaultSidebar = [
     link: "/guide/introduction",
   },
   {
+    text:"常见问题",
+    link: "/guide/qa"
+  },
+  {
     text: "本地播放",
     link: "/guide/local",
   },
@@ -21,7 +25,6 @@ const nav = [
   ...defaultSidebar,
 ]
 export default defineConfig({
-  base: "/new/",
   title: "VideoTogether",
   description: "和你的家人朋友一起在线看视频，无论相隔多远",
   lastUpdated: true,
