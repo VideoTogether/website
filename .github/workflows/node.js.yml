@@ -14,4 +14,4 @@ jobs:
         TARGET_REPO: VideoTogether/VideoTogether.github.io
         TARGET_BRANCH: master
         BUILD_SCRIPT: yarn && yarn build
-        BUILD_DIR: .vuepress/dist/
+        BUILD_DIR: .vitepress\dist\
