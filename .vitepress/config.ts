@@ -18,7 +18,7 @@ const defaultSidebar = [
   },
   {
     text:"常见问题",
-    link: "/guide/qa"
+    link: "/guide/qa",
   },
   {
     text: "本地播放",

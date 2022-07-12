@@ -2,7 +2,7 @@
 
 
 <script setup>
-import Local from '../.vitepress/components/local.vue'
+import Local from '../.vitepress/components/Local.vue'
 </script>
 
 <Local />
