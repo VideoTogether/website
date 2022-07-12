@@ -28,3 +28,9 @@ features:
   - title: 本地视频，同样支持
     details: 已经支持同步通过网页播放的本地视频，后续我们会计划支持本地播放器。
 ---
+
+
+<script setup>
+import Statistics from './.vitepress/components/Statistics.vue'
+</script>
+<Statistics />
