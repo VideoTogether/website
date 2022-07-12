@@ -28,6 +28,33 @@ const install = async () => {
     alert("不是 Via， Alook 或鲨鱼浏览器");
   }
 }
+function b64EncodeUnicode(str) {
+    // first we use encodeURIComponent to get percent-encoded UTF-8,
+    // then we convert the percent encodings into raw bytes which
+    // can be fed into btoa.
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }));
+}
+async function encode() {
+    let plugin = {
+        author: "maggch@outlook.com",
+        code: b64EncodeUnicode(await getScript()),
+        id: 1656139986,
+        name: "Video Together",
+        url: "*"
+    }
+    return b64EncodeUnicode(JSON.stringify(plugin));
+}
+
+async function getScript() {
+    let url = "https://cdn.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.user.js?timestamp=" + Date.now();
+    let script = "";
+    let r = await fetch(url);
+    return await r.text();
+}
+
 </script>
 <template>
   <button class="btn" @click="install">安装 VideoTogether</button>

@@ -1,8 +1,10 @@
 # 使用指南
 
+欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
+
 VideoTogether 插件安装完后，任意打开一个网站如百度，右下角就会出现插件的窗口
 
-![插件显示图](/examples/vt_window.png)
+<img src="/examples/vt_window.png" style="max-width: 300px;">
 
 ## 创建房间
 
@@ -14,7 +16,9 @@ VideoTogether 插件安装完后，任意打开一个网站如百度，右下角
 
 ## 加入房间
 
-输入房间名及密码，点击加入就会自动打开房主正在分享的视频
+输入房间名，点击加入就会自动打开房主正在分享的视频
+
+不需要密码
 
 ## 一起观看本地视频
 
