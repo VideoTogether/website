@@ -44,4 +44,4 @@ git clone https://github.com/VideoTogether/VideoTogether.git
 9. 执行 `python ./source/server/main.py debug` 启动服务端
 10. 如果需要后台运行，请使用 linux `screen` 或配置守护进程
 11. 如果需要隐藏5000端口请自行反代至80，并更改`release_host`
-12. 注意：如果使用纯公网IP或内网穿透可能会在htpps网站中出现问题
+12. 注意：如果使用纯公网IP或内网穿透可能会在https网站中出现问题
