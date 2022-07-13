@@ -57,8 +57,9 @@ import ViaInstall from '../.vitepress/components/ViaInstall.vue'
 [VideoTogether 脚本地址](https://cdn.jsdelivr.net/gh/maggch97/VideoTogether@latest/release/extension.user.js)
 
 alook via 安装点击下面的安装按钮
-<script setup>
-import ViaInstall from '../.vitepress/components/ViaInstall.vue'
-</script>
+
+<template>
+  <ViaInstall />
+</template>
 
 <ViaInstall />
