@@ -4,11 +4,6 @@
 
 欢迎加入我们的交流群获取帮助。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
 
-### Alook Via 浏览器怎么安装
-
-
-https://videotogether.github.io/guide/install.html#ios-15-ipad-os-15-%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%89%88%E6%9C%AC
-最下面的安装按钮也是支持 Alook 和 Via 浏览器的。不过一些视频网站在这两个浏览器上可能不能同步
 
 ### 点了加入房间，网页刷新一下404或者没加入成功
 
