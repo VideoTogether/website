@@ -25,6 +25,8 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 ## IOS 15 / iPad OS 15 及以上版本
 
+请参考下方视频操作
+
 1. IOS 15 及以上版本的苹果用户推荐使用 [userscripts](https://apps.apple.com/app/userscripts/id1463298887) 插件，安装后可在 Safari 浏览器使用
 
 2. 启用 userscripts 插件后，点击 [VideoTogether 插件安装链接](https://cdn.jsdelivr.net/gh/maggch97/VideoTogether@latest/release/extension.user.js) 进行安装
@@ -53,3 +55,10 @@ import ViaInstall from '../.vitepress/components/ViaInstall.vue'
 但是使用推荐的安装方式能够获得最好的兼容性，并且插件的一些功能依赖特定的浏览器。我们不保证插件能够在其他浏览器很好的运行。
 
 [VideoTogether 脚本地址](https://cdn.jsdelivr.net/gh/maggch97/VideoTogether@latest/release/extension.user.js)
+
+alook via 安装点击下面的安装按钮
+<script setup>
+import ViaInstall from '../.vitepress/components/ViaInstall.vue'
+</script>
+
+<ViaInstall />
