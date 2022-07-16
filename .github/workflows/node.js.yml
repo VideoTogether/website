@@ -10,8 +10,7 @@ jobs:
     - name: Release
       run: |
           git clone https://github.com/VideoTogether/VideoTogether tmp
-          cp -r ./tmp/release/ ./.vitepress/dist/
-          rm -rf tmp
+          ls ./.vitepress/dist/
 
     - name: vuepress-deploy
       uses: jenkey2011/vuepress-deploy@master
@@ -19,5 +18,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: VideoTogether/VideoTogether.github.io
         TARGET_BRANCH: main
-        BUILD_SCRIPT: yarn && yarn build && find .
+        BUILD_SCRIPT: yarn && yarn build && cp -r ./tmp/release/ ./.vitepress/dist/ && rm -rf tmp
         BUILD_DIR: ./.vitepress/dist
