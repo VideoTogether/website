@@ -10,7 +10,7 @@ jobs:
     - name: Release
       run: |
           git clone https://github.com/VideoTogether/VideoTogether tmp
-          cp /tmp/release /.vitepress/dist/
+          cp -r ./tmp/release/ ./.vitepress/dist/
           rm -rf tmp
 
     - name: vuepress-deploy
