@@ -9,7 +9,11 @@ jobs:
 
     - name: Release
       run: |
-          git clone https://github.com/VideoTogether/VideoTogether tmp
+          latestZipUrl=$(curl https://api.github.com/repos/videotogether/videotogether/releases/latest -s | jq '.zipball_url')
+          wget $latestZipUrl -O latest.zip
+          unzip latest.zip -d latest
+          mkdir -p ./tmp
+          cp -r ./latest/*/release ./tmp
           ls ./tmp && ls -a
 
     - name: vuepress-deploy
