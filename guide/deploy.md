@@ -22,6 +22,9 @@ git clone https://github.com/valetzx/VideoTogether && mv -b VideoTogether/* ./ &
 ![](/public/examples/deploy3.png)
 
 7. 公开脚本示例：https://alist.learnonly.xyz/d/!Together/vt.user.js
+8. 需要更新服务后端，请点 `STOP` 后重新输入步骤三的指令
+9. 你可以使用replit的域名+/vt.user.js直接更新你的脚本 例：https://sync.pighog.repl.co/vt.user.js
+10. 可以开启 `main.py` 中的 `redis` 缓存，`Replit` 脚本已做好适配，仅Replit！
 
 ## 自己的服务器上部署
 
