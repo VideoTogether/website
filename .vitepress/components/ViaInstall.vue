@@ -49,7 +49,7 @@ async function encode() {
 }
 
 async function getScript() {
-    let url = "https://cdn.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.user.js?timestamp=" + Date.now();
+    let url = "https://2gether.video/release/extension.user.js?timestamp=" + Date.now();
     let script = "";
     let r = await fetch(url);
     return await r.text();

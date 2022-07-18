@@ -8,7 +8,7 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 1. 使用 Edge 浏览器访问 [Tampermonkey 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 安装 Tampermonkey 插件
 
-2. 使用 Edge 浏览器访问 [VideoTogether 插件安装链接](https://cdn.jsdelivr.net/gh/maggch97/VideoTogether@latest/release/extension.user.js) ，点击 安装 按钮即可安装 VideoTogether 插件
+2. 使用 Edge 浏览器访问 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) ，点击 安装 按钮即可安装 VideoTogether 插件
 
 ## 安卓
 
@@ -18,7 +18,7 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 <img src="/examples/android_tm.png" style="max-width: 500px;">
 
-2. 使用 猴狐浏览器 访问本页，点击 [VideoTogether 插件安装链接](https://cdn.jsdelivr.net/gh/maggch97/VideoTogether@latest/release/extension.user.js) ，按下图安装
+2. 使用 猴狐浏览器 访问本页，点击 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) ，按下图安装
 
 <img src="/examples/android_vt.jpg" style="max-width: 300px;">
 
@@ -29,7 +29,7 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 1. IOS 15 及以上版本的苹果用户推荐使用 [userscripts](https://apps.apple.com/app/userscripts/id1463298887) 插件，安装后可在 Safari 浏览器使用
 
-2. 启用 userscripts 插件后，点击 [VideoTogether 插件安装链接](https://cdn.jsdelivr.net/gh/maggch97/VideoTogether@latest/release/extension.user.js) 进行安装
+2. 启用 userscripts 插件后，点击 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) 进行安装
 
 <video id="video" controls="" preload="none">
     <source id="mp4" src="/examples/ios15.mp4" type="video/mp4">
@@ -54,7 +54,7 @@ import ViaInstall from '../.vitepress/components/ViaInstall.vue'
 
 但是使用推荐的安装方式能够获得最好的兼容性，并且插件的一些功能依赖特定的浏览器。我们不保证插件能够在其他浏览器很好的运行。
 
-[VideoTogether 脚本地址](https://cdn.jsdelivr.net/gh/maggch97/VideoTogether@latest/release/extension.user.js)
+[VideoTogether 脚本地址](https://2gether.video/release/extension.user.js)
 
 alook via 安装点击下面的安装按钮
 
