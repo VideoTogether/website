@@ -69,7 +69,13 @@ docker run -d --restart=always -p 5000:5000 --name="videotogether" pigeonpig/vid
 docker cp ./release_host videotogether:/app/source/extension/config
 ```
 
-6. 使用 `docker restart videotogether` 重启容器
-7. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载后端生成的油猴脚本
-8. 注意Docker版不会实时更新维护
+6. 执行 `docker exec videotogether cat /app/source/extension/config/release_host` 检查容器内部host是否正确
+7. 执行 `docker exec videotogether python /app/script/build_extension.py` 构建插件，格式示例：
+8. 使用 `docker restart videotogether` 重启容器
+9. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载/更新后端生成的油猴脚本
+
+
+ `http://172.22.68.18:5000/vt.user.js` / `https://videotogether.examples.com:5000/vt.user.js` 
+
+10. 注意Docker版不会实时更新维护
  
