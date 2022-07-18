@@ -41,6 +41,8 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 2. 请关闭鲨鱼浏览器的视频浮窗播放功能，否则插件无法正常工作
 
+3. 点击下面的安装按钮进行安装
+
 <script setup>
 import ViaInstall from '../.vitepress/components/ViaInstall.vue'
 </script>
