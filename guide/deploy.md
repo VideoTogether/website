@@ -57,7 +57,7 @@ git clone https://github.com/VideoTogether/VideoTogether.git
 docker run -d --restart=always -p 5000:5000 --name="videotogether" pigeonpig/videotogether:latest
 ```
 
-2. 以上指令解释docker run运行 -d后台 --restart=always自动重启 -p 5000:5000链接5000:5000端口 --name="videotogether"容器名字 pigeonpig/videotogether:latest本镜像:最新
+2. 以上指令解释：docker run运行 -d后台 --restart=always自动重启 -p 5000:5000链接5000:5000端口 --name="videotogether"容器名字 pigeonpig/videotogether:latest本镜像:最新
 3. 注意：一键部署docker版暂时不支持redis缓存，需要自己配置
 4. 在本地新建一个名为 `release_host` 的文件，在文件中填入 协议 + 你的域名/或公网IP/或内网穿透地址 + 5000端口，格式示例：
 
@@ -77,5 +77,5 @@ docker cp ./release_host videotogether:/app/source/extension/config
 
  `http://172.22.68.18:5000/vt.user.js` / `https://videotogether.examples.com:5000/vt.user.js` 
 
-10. 注意Docker版不会实时更新维护
+10. 注意Docker版不会实时更新维护，https网站给http发请求会报错，请绑域名或自行转换为https协议
  
