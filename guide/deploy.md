@@ -39,7 +39,7 @@ git clone https://github.com/VideoTogether/VideoTogether.git
 4. 转到源码根目录 `cd VideoTogether`
 5. 更改 `/source/extension/config/release_host` 中的内容为 协议 + 你的域名/或公网IP/或内网穿透地址 + 5000端口，格式示例：
 
- `http://172.22.68.18:5000` / `https://videotogether.examples.com:5000` ！注意请勿换行！只填一个！
+！注意请勿换行！只填一个！ `http://172.22.68.18:5000` / `https://videotogether.examples.com:5000` 
 
 6. 安装依赖 `pip install -r requirements.txt` 
 7. 执行 `python ./script/build_extension.py` 
@@ -61,7 +61,7 @@ docker run -d --restart=always -p 5000:5000 --name="videotogether" pigeonpig/vid
 3. 注意：一键部署docker版暂时不支持redis缓存，需要自己配置
 4. 在本地新建一个名为 `release_host` 的文件，在文件中填入 协议 + 你的域名/或公网IP/或内网穿透地址 + 5000端口，格式示例：
 
- `http://172.22.68.18:5000` / `https://videotogether.examples.com:5000` ！注意请勿换行！只填一个！
+！注意请勿换行！只填一个！ `http://172.22.68.18:5000` / `https://videotogether.examples.com:5000` 
  
 5. 执行命令复制该文件到容器内部 docker cp 你的文件路径 容器名:容器路径
 
@@ -70,9 +70,9 @@ docker cp ./release_host videotogether:/app/source/extension/config
 ```
 
 6. 执行 `docker exec videotogether cat /app/source/extension/config/release_host` 检查容器内部host是否正确
-7. 执行 `docker exec videotogether python /app/script/build_extension.py` 构建插件，格式示例：
+7. 执行 `docker exec videotogether python /app/script/build_extension.py` 构建插件
 8. 使用 `docker restart videotogether` 重启容器
-9. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载/更新后端生成的油猴脚本
+9. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载/更新后端生成的油猴脚本，格式示例：
 
 
  `http://172.22.68.18:5000/vt.user.js` / `https://videotogether.examples.com:5000/vt.user.js` 
