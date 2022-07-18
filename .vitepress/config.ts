@@ -35,7 +35,7 @@ export default defineConfig({
   themeConfig: {
     nav,
     socialLinks: [
-      { icon: "github", link: "https://github.com/VideoTogether/VideoTogether.github.io" },
+      { icon: "github", link: "https://github.com/VideoTogether/website" },
     ],
     footer: {
       message: '欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group',
