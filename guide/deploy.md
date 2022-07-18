@@ -48,3 +48,15 @@ git clone https://github.com/VideoTogether/VideoTogether.git
 10. 如果需要后台运行，请使用 linux `screen` 或配置守护进程
 11. 如果需要隐藏5000端口请自行反代至80，并更改`release_host`
 12. 注意：如果使用纯公网IP或内网穿透可能会在https网站中出现问题
+
+## 使用Docker部署
+
+1. 使用指令一键部署：
+
+```
+docker run -d --restart=always -p 5000:5000 --name="videotogether" pigeonpig/videotogether:latest
+```
+
+2. 以上指令解释docker run运行 -d后台 --restart=always自动重启 -p 5000:5000链接5000:5000端口 --name="videotogether"容器名字 pigeonpig/videotogether:latest本镜像:最新
+3. 注意：一键部署docker版暂时不支持redis缓存，需要自己配置
+4. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载后端生成的油猴脚本
