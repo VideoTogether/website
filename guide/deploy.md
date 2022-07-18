@@ -1,5 +1,7 @@
 # 服务端私有部署
 
+欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
+
 ## 在免费平台 `Replit` 上部署
 
 1. 注册 `Replit` 账号: https://replit.com/
@@ -79,3 +81,10 @@ docker cp ./release_host videotogether:/app/source/extension/config
 
 10. 注意Docker版不会实时更新维护，https网站给http发请求会报错，请绑域名或自行转换为https协议
  
+## 注意事项
+
+1. 如果使用http协议出现`Failed to fetch`请检查请求，如果是https请求报错，请绑定域名并后更改`release_host`中内容
+2. 如果上述内容更换无误还出现`Failed to fetch`可以尝试在你的端口后添加`/`例：`https://videotogether.examples.com:5000/` 
+3. 如果你正好拥有证书文件，可以阅读源码，添加证书文件`keyfile='private.key', certfile='certificate.crt'`，更改启动命令，`python main.py prod`
+4. 不维护没有域名/或证书的http问题，私有部署只维护`Replit`部署，其他随缘
+5. 私有部署问题可以在群内 @金桔猪 随缘回答
