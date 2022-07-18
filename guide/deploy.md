@@ -39,7 +39,7 @@ git clone https://github.com/VideoTogether/VideoTogether.git
 4. 转到源码根目录 `cd VideoTogether`
 5. 更改 `/source/extension/config/release_host` 中的内容为 协议 + 你的域名/或公网IP/或内网穿透地址 + 5000端口，格式示例：
 
- `http://172.22.68.18:5000` / `https://videotogether.examples.com:5000`
+ `http://172.22.68.18:5000` / `https://videotogether.examples.com:5000` ！注意请勿换行！只填一个！
 
 6. 安装依赖 `pip install -r requirements.txt` 
 7. 执行 `python ./script/build_extension.py` 
@@ -49,7 +49,7 @@ git clone https://github.com/VideoTogether/VideoTogether.git
 11. 如果需要隐藏5000端口请自行反代至80，并更改`release_host`
 12. 注意：如果使用纯公网IP或内网穿透可能会在https网站中出现问题
 
-## 使用Docker部署
+## 使用Docker容器部署
 
 1. 使用指令一键部署：
 
@@ -59,4 +59,17 @@ docker run -d --restart=always -p 5000:5000 --name="videotogether" pigeonpig/vid
 
 2. 以上指令解释docker run运行 -d后台 --restart=always自动重启 -p 5000:5000链接5000:5000端口 --name="videotogether"容器名字 pigeonpig/videotogether:latest本镜像:最新
 3. 注意：一键部署docker版暂时不支持redis缓存，需要自己配置
-4. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载后端生成的油猴脚本
+4. 在本地新建一个名为 `release_host` 的文件，在文件中填入 协议 + 你的域名/或公网IP/或内网穿透地址 + 5000端口，格式示例：
+
+ `http://172.22.68.18:5000` / `https://videotogether.examples.com:5000` ！注意请勿换行！只填一个！
+ 
+5. 执行命令复制该文件到容器内部 docker cp 你的文件路径 容器名:容器路径
+
+```
+docker cp ./release_host:/app/source/extension/config
+```
+
+6. 使用 docker restart videotogether 重启容器
+7. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载后端生成的油猴脚本
+8. 注意Docker版不会实时更新维护
+ 
