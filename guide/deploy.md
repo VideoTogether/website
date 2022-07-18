@@ -66,10 +66,10 @@ docker run -d --restart=always -p 5000:5000 --name="videotogether" pigeonpig/vid
 5. 执行命令复制该文件到容器内部 docker cp 你的文件路径 容器名:容器路径
 
 ```
-docker cp ./release_host:/app/source/extension/config
+docker cp ./release_host videotogether:/app/source/extension/config
 ```
 
-6. 使用 docker restart videotogether 重启容器
+6. 使用 `docker restart videotogether` 重启容器
 7. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载后端生成的油猴脚本
 8. 注意Docker版不会实时更新维护
  
