@@ -6,19 +6,21 @@
 
 Windows / macOS 用户推荐使用微软 Edge 浏览器
 
-1. 使用 Edge 浏览器访问 [Tampermonkey 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 安装 Tampermonkey 插件
+步骤1. 使用 Edge 浏览器访问 [Tampermonkey 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 安装 Tampermonkey 插件
 
-2. 使用 Edge 浏览器访问 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) ，点击 安装 按钮即可安装 VideoTogether 插件
+步骤2. 使用 Edge 浏览器访问 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) ，点击 安装 按钮即可安装 VideoTogether 插件
+
+先装步骤1！Tampermonkey 再装步骤2！VideoTogether
 
 ## 安卓
 
 安卓推荐使用 [猴狐浏览器](https://www.coolapk.com/apk/296754)
 
-1. 请使用 猴狐浏览器 访问本页，点击 [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 插件 按下图安装 Tampermonkey 插件
+步骤1. 请使用 猴狐浏览器 访问本页，点击 [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 插件 按下图安装 Tampermonkey 插件
 
 <img src="/examples/android_tm.png" style="max-width: 500px;">
 
-2. 使用 猴狐浏览器 访问本页，点击 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) ，按下图安装
+步骤2. 使用 猴狐浏览器 访问本页，点击 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) ，按下图安装
 
 <img src="/examples/android_vt.jpg" style="max-width: 300px;">
 
