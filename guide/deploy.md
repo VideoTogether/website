@@ -2,6 +2,10 @@
 
 欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
 
+VideoTogether 后端部署完后，出现以下`Not Found`字样为部署完成
+
+![](/public/examples/notfound.png)
+
 ## 在免费平台 `Replit` 上部署
 
 1. 注册 `Replit` 账号: https://replit.com/
@@ -72,7 +76,17 @@ docker cp ./release_host videotogether:/app/source/extension/config
 ```
 
 6. 执行 `docker exec videotogether cat /app/source/extension/config/release_host` 检查容器内部host是否正确
-7. 执行 `docker exec videotogether python /app/script/build_extension.py` 构建插件
+7. 执行 `docker exec videotogether python /app/script/build_extension.py` 构建插件脚本 `vt.user.js`
+
+当构建插件出现出现以下报错可忽略，不影响油猴脚本的使用：
+
+```
+shutil.copyfile("../release/vt.user.js", "./source/chrome/vt.user.js")
+File "/usr/local/lib/python3.10/shutil.py", line 254, in copyfile
+with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: '../release/vt.user.js'
+```
+
 8. 使用 `docker restart videotogether` 重启容器
 9. 部署完成后，可使用你的ip:5000或域名+/vt.user.js 下载/更新后端生成的油猴脚本，格式示例：
 
