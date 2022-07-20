@@ -13,17 +13,17 @@ const defaultSidebar = [
     link: "/guide/introduction",
   },
   {
+    text:"公共房间列表",
+    link: "/public"
+  },
+  {
     text: "私有部署",
     link: "/guide/deploy",
   },
   {
     text:"常见问题",
     link: "/guide/qa",
-  },
-  {
-    text: "本地播放",
-    link: "/guide/local",
-  },
+  }
 ]
 const nav = [
   ...defaultSidebar,

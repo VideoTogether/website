@@ -17,8 +17,12 @@ hero:
       text: 安装说明 ->
       link: /guide/install
     - theme: alt
+      text: 公共房间列表
+      link: https://github.com/VideoTogether/VideoTogether
+    - theme: alt
       text: 查看源码
       link: https://github.com/VideoTogether/VideoTogether
+    
 
 features:
   - title: 在任何设备上都可使用
