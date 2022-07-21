@@ -17,10 +17,6 @@ const defaultSidebar = [
     link: "/public"
   },
   {
-    text: "私有部署",
-    link: "/guide/deploy",
-  },
-  {
     text:"常见问题",
     link: "/guide/qa",
   }
