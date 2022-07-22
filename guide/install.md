@@ -18,7 +18,7 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 ## 安卓
 
-安卓推荐使用 [猴狐浏览器 下载链接](https://lemurbrowser.com/update/apk/Lemur_2_0_0_005.apk)
+安卓推荐使用 [猴狐浏览器 下载链接](https://lemurbrowser.com/update/apk/Lemur_2_0_0_006.apk)
 
 步骤1. 请使用 猴狐浏览器 访问本页，点击 [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 插件 按下图安装 Tampermonkey 插件
 
