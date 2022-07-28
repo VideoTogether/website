@@ -18,7 +18,7 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 ## 安卓
 
-安卓推荐使用 [猴狐浏览器 下载链接](https://lemurbrowser.com/update/apk/Lemur_2_0_0_005.apk)
+安卓推荐使用 [猴狐浏览器 下载链接](https://lemurbrowser.com/update/apk/Lemur_2_0_0_006.apk)
 
 如果你遇到问题，推荐你看一下安装教程视频 [在安卓手机或平板上安装一起看视频插件](https://www.bilibili.com/video/BV1XG41187Hh/?vd_source=1956535294dafbdc7ed9618b67807b9c)
 
@@ -44,7 +44,7 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 1. 下载 [鲨鱼浏览器](https://apps.apple.com/app/id1271984698)
 
-2. 请关闭鲨鱼浏览器的视频浮窗播放功能，否则插件无法正常工作
+2. 请关闭鲨鱼浏览器的视频浮窗播放功能，否则插件无法正常工作 （只有 iPhone 需要关，iPad不需要）
 
 3. 点击下面的安装按钮进行安装
 
