@@ -18,7 +18,7 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 ## 安卓
 
-安卓推荐使用 [猴狐浏览器 下载链接](https://lemurbrowser.com/update/apk/Lemur_2_0_0_006.apk)
+安卓推荐使用 [猴狐浏览器 下载链接](https://www.coolapk.com/apk/296754)
 
 如果你遇到问题，推荐你看一下安装教程视频 [在安卓手机或平板上安装一起看视频插件](https://www.bilibili.com/video/BV1XG41187Hh/?vd_source=1956535294dafbdc7ed9618b67807b9c)
 
