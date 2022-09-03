@@ -10,25 +10,17 @@
 
 Windows / macOS 用户推荐使用微软 Edge 浏览器
 
-步骤1. 使用 Edge 浏览器访问 [Tampermonkey 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 安装 Tampermonkey 插件
+使用 Edge 浏览器访问 [VideoTogether 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) 安装 VideoTogether 插件
 
-步骤2. 使用 Edge 浏览器访问 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) ，点击 安装 按钮即可安装 VideoTogether 插件
-
-如果你遇到问题，推荐你看一下安装教程视频 [在 Windows 或者 Mac 电脑上安装一起看视频插件](https://www.bilibili.com/video/BV1Q94y1D7cF/?vd_source=1956535294dafbdc7ed9618b67807b9c)
+安装后在 Edge 浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
 
 ## 安卓
 
 安卓推荐使用 [猴狐浏览器 下载链接](https://www.coolapk.com/apk/296754)
 
-如果你遇到问题，推荐你看一下安装教程视频 [在安卓手机或平板上安装一起看视频插件](https://www.bilibili.com/video/BV1XG41187Hh/?vd_source=1956535294dafbdc7ed9618b67807b9c)
+使用猴狐浏览器访问 [VideoTogether 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) 安装 VideoTogether 插件
 
-步骤1. 请使用 猴狐浏览器 访问本页，点击 [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) 插件 按下图安装 Tampermonkey 插件
-
-<img src="/examples/android_tm.png" style="max-width: 500px;">
-
-步骤2. 使用 猴狐浏览器 访问本页，点击 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) ，按下图安装
-
-<img src="/examples/android_vt.jpg" style="max-width: 300px;">
+安装后在猴狐浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
 
 
 ## IOS 15 / iPad OS 15 及以上版本
@@ -41,6 +33,7 @@ Windows / macOS 用户推荐使用微软 Edge 浏览器
 
 2. 启用 userscripts 插件后，点击 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) 进行安装
 
+安装后在 Safari 浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
 
 ## IOS 14 / iPad OS 14 及以下版本
 
