@@ -9,6 +9,10 @@ function getFile(e)  {
   videoUrl.value = url
 }
 
+let script = document.createElement('script');
+script.src ='https://2gether.video/release/extension.user.js';
+document.head.appendChild(script);
+
 </script>
 <template>
   <div style="margin: 20px;">

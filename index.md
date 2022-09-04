@@ -17,8 +17,8 @@ hero:
       text: 安装说明 ->
       link: /guide/install
     - theme: alt
-      text: 公共房间列表
-      link: /public
+      text: 播放本地视频
+      link: /guide/local
     - theme: alt
       text: 查看源码
       link: https://github.com/VideoTogether/VideoTogether
