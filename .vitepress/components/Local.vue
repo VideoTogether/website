@@ -10,7 +10,7 @@ function getFile(e)  {
 }
 
 let script = document.createElement('script');
-script.src ='https://2gether.video/release/extension.user.js';
+script.src ='https://2gether.video/release/extension.website.user.js';
 document.head.appendChild(script);
 
 </script>
