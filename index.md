@@ -20,17 +20,17 @@ hero:
       text: 播放本地视频
       link: /guide/local
     - theme: alt
-      text: 查看源码
-      link: https://github.com/VideoTogether/VideoTogether
+      text: 添加到你的网站
+      link: /guide/website
     
 
 features:
   - title: 在任何设备上都可使用
     details: 支持运行在 Windows 电脑，Linux 电脑，安卓手机平板电视，苹果手机平板电脑，通过 Airplay 甚至 Apple TV 也可以被完美支持。
-  - title: 支持所有的在线视频网站
-    details: 支持哔哩哔哩，爱奇艺，腾讯视频，Youtube 和其他一切的在线视频网站。
-  - title: 本地视频，同样支持
-    details: 已经支持同步通过网页播放的本地视频，
+  - title: 支持所有的在线视频网站和本地视频
+    details: 支持哔哩哔哩，爱奇艺，腾讯视频，Youtube 和其他一切的在线视频网站。通过浏览器播放的本地视频进度也可以被同步
+  - title: 为你的网站添加一起看功能
+    details: 通过一行代码，即可为你的视频网站添加一起看功能
 ---
 
 

@@ -1,10 +1,13 @@
 # 本地播放
 
-如果遇到问题，请参考一下[本地视频的使用说明](https://2gether.video/guide/introduction.html#%E4%B8%80%E8%B5%B7%E8%A7%82%E7%9C%8B%E6%9C%AC%E5%9C%B0%E8%A7%86%E9%A2%91)
+无需安装插件，打开本页即可同步本地视频
+
+在保证房主和成员的设备上都有同一份视频文件时，房主选择本地视频后即可建房分享
+
+新加入的成员也需要选择对应的视频文件后才可能和房主同步播放, 插件并不会帮你自动打开本地视频
 
 浏览器支持的视频格式有限，你可能会遇到没声音，黑屏等等问题。
 
-如果你的视频编码浏览器不支持的话，我推荐你试试 https://syncplay.pl/
 
 <script setup>
 import Local from '../.vitepress/components/Local.vue'

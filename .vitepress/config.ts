@@ -12,10 +12,10 @@ const defaultSidebar = [
     text: "使用指南",
     link: "/guide/introduction",
   },
-  {
-    text:"公共房间列表",
-    link: "/public"
-  },
+  // {
+  //   text:"公共房间列表",
+  //   link: "/public"
+  // },
   {
     text:"常见问题",
     link: "/guide/qa",
@@ -31,7 +31,7 @@ export default defineConfig({
   themeConfig: {
     nav,
     socialLinks: [
-      { icon: "github", link: "https://github.com/VideoTogether/website" },
+      { icon: "github", link: "https://github.com/VideoTogether/VideoTogether" },
     ],
     footer: {
       message: '欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group',
