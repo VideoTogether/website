@@ -1,5 +1,8 @@
 # 常见问题
 
+<script setup>
+import WebsiteAlert from '../.vitepress/components/WebsiteAlert.vue'
+</script>
 
 ### 提问前请确认你是使用我们推荐的安装方式安装的，我们只保证推荐的安装方式工作正常
 
