@@ -12,10 +12,10 @@ const defaultSidebar = [
     text: "使用指南",
     link: "/guide/introduction",
   },
-  // {
-  //   text:"公共房间列表",
-  //   link: "/public"
-  // },
+  {
+    text:"添加到网站",
+    link: "/guide/website"
+  },
   {
     text:"常见问题",
     link: "/guide/qa",
