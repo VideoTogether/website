@@ -35,3 +35,7 @@ import WebsiteAlert from '../.vitepress/components/WebsiteAlert.vue'
 ### 怎么部署私有的服务端
 
 参考 https://videotogether.github.io/guide/deploy.html
+
+
+### 查看系统运行状态
+[系统状态](/support/systemstatus)
