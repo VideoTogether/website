@@ -8,6 +8,7 @@ const install = async () => {
     }
   } catch { }
   if (typeof (window.via) != "undefined" && typeof (window.via.addon) != "undefined") {
+    alert("开始via安装")
     try {
       window.via.addon(await encode());
     } catch (e) {
