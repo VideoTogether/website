@@ -1,5 +1,11 @@
 <script setup lang="ts">
 window.VideoTogetherExtensionUrl = "https://2gether.video/release/extension.user.js"
+function ShowAlert(str){
+  alert(str);
+  try{
+  document.querySelector("#install_text").innerHTML = document.querySelector("#install_text").innerHTML + " |"+str;
+  }catch{}
+}
 const install = async () => {
   let isShark = false;
   try {
@@ -8,14 +14,14 @@ const install = async () => {
     }
   } catch { }
   if (typeof (window.via) != "undefined" && typeof (window.via.addon) != "undefined") {
-    alert("开始via安装")
+    ShowAlert("开始via安装")
     try {
       window.via.addon(await encode());
     } catch (e) {
-      alert("安装失败" + e);
+      ShowAlert("安装失败" + e);
     }
   } else if (isShark) {
-    alert("开始鲨鱼浏览器安装")
+    ShowAlert("开始鲨鱼浏览器安装")
     try {
       let sharkDic = {
         'type': 'via',
@@ -23,13 +29,13 @@ const install = async () => {
       };
       console.info(sharkDic);
       window.webkit.messageHandlers.jsExtensionContent.postMessage(sharkDic);
-      alert("安装结束")
+      ShowAlert("安装结束")
     } catch (e) {
-      alert("安装失败" + e);
+      ShowAlert("安装失败" + e);
     }
 
   } else {
-    alert("不是 Via， Alook 或鲨鱼浏览器");
+    ShowAlert("不是 Via， Alook 或鲨鱼浏览器");
   }
 }
 function b64EncodeUnicode(str) {
@@ -42,7 +48,7 @@ function b64EncodeUnicode(str) {
               return String.fromCharCode('0x' + p1);
       }));
     }catch{
-      alert("加密失败")
+      ShowAlert("加密失败")
     }
 
 }
@@ -63,13 +69,13 @@ async function getScript() {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 3000)
     try{
-      alert("插件地址："+url)
+      ShowAlert("插件地址："+url)
       let r = await fetch(url, { signal: controller.signal });
       let text =  await r.text();
-      alert("获取插件数据成功，开始安装")
+      ShowAlert("获取插件数据成功，开始安装")
       return text;
     }catch(e){
-      alert("获取插件数据失败")
+      ShowAlert("获取插件数据失败")
     }
 }
 
@@ -96,6 +102,7 @@ async function getScript() {
 </script>
 <template>
   <button class="btn" @click="install">安装 VideoTogether</button>
+  <p id="install_text"></p>
 </template>
 <style scoped>
 .btn {
