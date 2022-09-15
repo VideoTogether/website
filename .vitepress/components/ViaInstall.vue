@@ -1,7 +1,7 @@
 <script setup lang="ts">
 window.VideoTogetherExtensionUrl = "https://2gether.video/release/extension.user.js"
 const install = async () => {
-  let isShark = true;
+  let isShark = false;
   try {
     if (window.webkit.messageHandlers.jsExtensionContent.postMessage != undefined) {
       isShark = true;
