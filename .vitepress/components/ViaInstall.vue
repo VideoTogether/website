@@ -1,7 +1,7 @@
 <script setup lang="ts">
 window.VideoTogetherExtensionUrl = "https://2gether.video/release/extension.user.js"
 const install = async () => {
-  let isShark = false;
+  let isShark = true;
   try {
     if (window.webkit.messageHandlers.jsExtensionContent.postMessage != undefined) {
       isShark = true;
@@ -14,6 +14,7 @@ const install = async () => {
       alert("安装失败" + e);
     }
   } else if (isShark) {
+    alert("开始鲨鱼浏览器安装")
     try {
       let sharkDic = {
         'type': 'via',
@@ -21,6 +22,7 @@ const install = async () => {
       };
       console.info(sharkDic);
       window.webkit.messageHandlers.jsExtensionContent.postMessage(sharkDic);
+      alert("安装结束")
     } catch (e) {
       alert("安装失败" + e);
     }
@@ -33,10 +35,15 @@ function b64EncodeUnicode(str) {
     // first we use encodeURIComponent to get percent-encoded UTF-8,
     // then we convert the percent encodings into raw bytes which
     // can be fed into btoa.
-    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
-        function toSolidBytes(match, p1) {
-            return String.fromCharCode('0x' + p1);
-    }));
+    try{
+      return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+          function toSolidBytes(match, p1) {
+              return String.fromCharCode('0x' + p1);
+      }));
+    }catch{
+      alert("加密失败")
+    }
+
 }
 async function encode() {
     let plugin = {
@@ -52,8 +59,17 @@ async function encode() {
 async function getScript() {
     let url = window.VideoTogetherExtensionUrl;
     let script = "";
-    let r = await fetch(url);
-    return await r.text();
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 3000)
+    try{
+      alert("插件地址："+url)
+      let r = await fetch(url, { signal: controller.signal });
+      let text =  await r.text();
+      alert("获取插件数据成功，开始安装")
+      return text;
+    }catch(e){
+      alert("获取插件数据失败")
+    }
 }
 
 (function test(){
