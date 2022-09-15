@@ -69,6 +69,7 @@ async function getScript() {
        hrefs[i].href = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.user.js"
       }
     }
+    window.VideoTogetherExtensionUrl = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.user.js"
     console.error(e);
 
   })
