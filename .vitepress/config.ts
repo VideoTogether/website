@@ -51,24 +51,21 @@ export default defineConfig({
       title: 'VideoTogether',
       description: '和你的家人朋友一起在线看视频，无论相隔多远',
       selectText: '选择语言',
-      base: '/zh-cn/'
     },
     '/en-us/': {
       lang: 'en-US',
       title: 'VideoTogether',
       description: 'Watch videos together with your family and friends, no matter how far away',
       selectText: 'Languages',
-      base: '/en-us/'
     },
     '/': {
       lang: 'en-US',
       title: 'VideoTogether',
       description: 'Watch videos together with your family and friends, no matter how far away',
       selectText: 'Languages',
-      base: '/'
     }
   },
-
+  base: '/',
   lastUpdated: true,
   themeConfig: {
     localeLinks: {
