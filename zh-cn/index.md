@@ -15,13 +15,13 @@ hero:
   actions:
     - theme: brand
       text: 安装说明 ->
-      link: /guide/install
+      link: /zh-cn/guide/install
     - theme: alt
       text: 播放本地视频
-      link: /guide/local
+      link: /zh-cn/guide/local
     - theme: alt
       text: 添加到你的网站
-      link: /guide/website
+      link: /zh-cn/guide/website
     
 
 features:
