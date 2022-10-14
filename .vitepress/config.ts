@@ -6,37 +6,105 @@ const defaultSidebar = [
   // },
   {
     text: "安装说明",
-    link: "/guide/install",
+    link: "/zh-cn/guide/install",
   },
   {
     text: "使用指南",
-    link: "/guide/introduction",
+    link: "/zh-cn/guide/introduction",
   },
   {
-    text:"添加到网站",
-    link: "/guide/website"
+    text: "添加到网站",
+    link: "/zh-cn/guide/website"
   },
   {
-    text:"常见问题",
-    link: "/guide/qa",
+    text: "常见问题",
+    link: "/zh-cn/guide/qa",
   }
 ]
+
 const nav = [
   ...defaultSidebar,
 ]
+
+const navEn = [
+  {
+    text: "Installation",
+    link: "/en-us/guide/install",
+  },
+  {
+    text: "Guide",
+    link: "/en-us/guide/introduction",
+  },
+  {
+    text: "Add to your website",
+    link: "/en-us/guide/website"
+  },
+  {
+    text: "Q&A",
+    link: "/en-us/guide/qa",
+  }
+]
 export default defineConfig({
-  title: "VideoTogether",
-  description: "和你的家人朋友一起在线看视频，无论相隔多远",
+  locales: {
+    '/zh-cn/': {
+      lang: 'zh-CN',
+      title: 'VideoTogether',
+      description: '和你的家人朋友一起在线看视频，无论相隔多远',
+      selectText: '选择语言',
+      base: '/zh-cn/'
+    },
+    '/en-us/': {
+      lang: 'en-US',
+      title: 'VideoTogether',
+      description: 'Watch videos together with your family and friends, no matter how far away',
+      selectText: 'Languages',
+      base: '/en-us/'
+    },
+    '/': {
+      lang: 'en-US',
+      title: 'VideoTogether',
+      description: 'Watch videos together with your family and friends, no matter how far away',
+      selectText: 'Languages',
+      base: '/'
+    }
+  },
+
   lastUpdated: true,
   themeConfig: {
-    nav,
+    localeLinks: {
+      items: [
+        { text: '简体中文', link: '/zh-cn/'},
+        { text: 'English', link: '/en-us/'}
+      ]
+    },
     socialLinks: [
       { icon: "github", link: "https://github.com/VideoTogether/VideoTogether" },
     ],
-    footer: {
-      message: '欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group',
-      copyright: "Copyright © 2022-present VideoTogether",
-    },
-    lastUpdatedText: "Last Updated"
+    locales: {
+      '/zh-cn/': {
+        nav: nav,
+        lastUpdatedText: "上次更新",
+        footer: {
+          message: '欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group',
+          copyright: "Copyright © 2022-present VideoTogether",
+        }
+      },
+      '/en-us/': {
+        nav: navEn,
+        lastUpdatedText: "Last Updated",
+        footer: {
+          message: 'Welcome to join our Telegram：https://t.me/videotogether_group',
+          copyright: "Copyright © 2022-present VideoTogether",
+        },
+      },
+      '/': {
+        nav: navEn,
+        lastUpdatedText: "Last Updated",
+        footer: {
+          message: 'Welcome to join our Telegram：https://t.me/videotogether_group',
+          copyright: "Copyright © 2022-present VideoTogether",
+        },
+      }
+    }
   },
 })
