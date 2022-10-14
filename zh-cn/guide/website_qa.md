@@ -6,7 +6,7 @@
 
 
 <script setup>
-import WebQa from '../.vitepress/components/WebQa.vue'
+import WebQa from '../../.vitepress/components/WebQa.vue'
 </script>
 
 <WebQa />
