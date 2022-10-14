@@ -1,12 +1,12 @@
-# 本地播放
+# Local Video
 
-无需安装插件，打开本页即可同步本地视频
+No need to install the extension, open this page to sync local videos
 
-在保证房主和成员的设备上都有同一份视频文件时，房主选择本地视频后即可建房分享
+The same video file needs to exist on both the host's and member's devices. The host can select the local video and then create a room to share.
 
-新加入的成员也需要选择对应的视频文件后才可能和房主同步播放, 插件并不会帮你自动打开本地视频
+New members also need to open the same video file before they can sync with the host, the extension does not automatically open the local video for you.
 
-浏览器支持的视频格式有限，你可能会遇到没声音，黑屏等等问题。
+The browser supports limited video formats, you may encounter no sound, black screen and other problems.
 
 
 <script setup>
