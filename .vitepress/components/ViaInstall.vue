@@ -35,7 +35,7 @@ const install = async () => {
     }
 
   } else {
-    ShowAlert("不是 Via， Alook 或鲨鱼浏览器");
+    ShowAlert("不是鲨鱼浏览器");
   }
 }
 function b64EncodeUnicode(str) {
