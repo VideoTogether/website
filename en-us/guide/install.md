@@ -7,9 +7,9 @@ Welcome to our Telegram：https://t.me/videotogether_group
 1. Install extension from your browser's extension store
 
 [Edge Store](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli)
-
+<!-- 
 [Firefox Store](https://addons.mozilla.org/firefox/addon/videotogether/)
-
+ -->
 [Chrome Store](https://chrome.google.com/webstore/detail/videotogether/dpjiaamadbcfheiamdaamhgpomlkohbn)
 
 2. Open a new page like google in browser, you will see VideoTogether window
