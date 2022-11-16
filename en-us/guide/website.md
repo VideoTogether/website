@@ -3,7 +3,7 @@
 If you are a video site owner, you can add the Watch Together feature to your site by adding just one line of code to introduce JS.
 
 
-`<script src="https://2gether.video/release/extension.website.user.js"/>`
+`<script src="https://2gether.video/release/extension.website.user.js"></script>`
 
 Note that if your site's video player is nested in an iframe, you need to add this line of code to each level of html. Otherwise the plug-in will prompt the page no video.
 
