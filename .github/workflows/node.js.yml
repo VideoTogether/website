@@ -11,9 +11,9 @@ jobs:
       run: |
           latestZipUrl=$(curl https://api.github.com/repos/videotogether/videotogether/releases/latest -s | jq -r '.zipball_url')
           wget $latestZipUrl -O latest.zip
-          unzip latest.zip -d latest
+          unzip latest.zip -d /tmp/latest
           mkdir -p ./tmp
-          cp -r ./latest/*/release ./tmp
+          cp -r /tmp/latest/*/release ./tmp
           ls ./tmp && ls -a
 
     - name: vuepress-deploy
