@@ -43,7 +43,7 @@ Windows / macOS 用户必须使用微软 Edge 浏览器
 
 2. 请关闭鲨鱼浏览器的视频浮窗播放功能，否则插件无法正常工作 （只有 iPhone 需要关，iPad不需要）
 
-3. 点击下面的安装按钮进行安装
+3. 使用鲨鱼浏览器打开这个页面后， 点击下面的安装按钮进行安装
 
 <script setup>
 import ViaInstall from '../../.vitepress/components/ViaInstall.vue'
