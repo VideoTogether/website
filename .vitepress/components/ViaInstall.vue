@@ -1,7 +1,7 @@
 <script setup lang="ts">
 window.VideoTogetherExtensionUrl = "https://2gether.video/release/extension.website.user.js"
 function ShowAlert(str){
-  alert(str);
+  // alert(str);
   try{
   document.querySelector("#install_text").innerHTML = document.querySelector("#install_text").innerHTML + " |"+str;
   }catch{}
@@ -89,7 +89,7 @@ async function getScript() {
 
     for (let i = 0; i <hrefs.length ; i++) {
       if(hrefs[i].href == window.VideoTogetherExtensionUrl){
-       hrefs[i].href = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
+       hrefs[i].href = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.user.js"
       }
     }
     window.VideoTogetherExtensionUrl = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
