@@ -1,5 +1,7 @@
 <script setup lang="ts">
-window.VideoTogetherExtensionUrl = "https://2gether.video/release/extension.website.user.js"
+window.VideoTogetherExtensionUrl = "https://2gether.video/release/extension.user.js"
+
+window.VideoTogetherWebsiteExtensionUrl = "https://2gether.video/release/extension.website.user.js"
 function ShowAlert(str){
   // alert(str);
   try{
@@ -64,7 +66,7 @@ async function encode() {
 }
 
 async function getScript() {
-    let url = window.VideoTogetherExtensionUrl;
+    let url = window.VideoTogetherWebsiteExtensionUrl;
     let script = "";
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 3000)
@@ -91,8 +93,11 @@ async function getScript() {
       if(hrefs[i].href == window.VideoTogetherExtensionUrl){
        hrefs[i].href = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.user.js"
       }
+      if(hrefs[i].href == window.VideoTogetherWebsiteExtensionUrl){
+       hrefs[i].href = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
+      }
     }
-    window.VideoTogetherExtensionUrl = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
+    window.VideoTogetherWebsiteExtensionUrl = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
     console.error(e);
 
   })
