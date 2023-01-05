@@ -27,7 +27,7 @@ Windows / macOS 用户必须使用微软 Edge 浏览器
 
 ## IOS 15 / iPad OS 15 及以上版本
 
-1. 点击 [VideoTogether 安装连接](https://apps.apple.com/app/userscripts/id1463298887), 安装插件
+1. 点击 [VideoTogether 安装连接](https://apps.apple.com/app/videotogether/id6443755429), 安装插件
 
 2. 打开安装好的软件, 按照软件界面上的步骤启用插件
 
