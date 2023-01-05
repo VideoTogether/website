@@ -27,11 +27,9 @@ Windows / macOS 用户必须使用微软 Edge 浏览器
 
 ## IOS 15 / iPad OS 15 及以上版本
 
-步骤比较复杂，请看一下安装教程视频 [在 iPhone 或 iPad 上安装一起看视频的插件](https://www.bilibili.com/video/BV19t4y1G7MB/?vd_source=1956535294dafbdc7ed9618b67807b9c)
+1. 点击 [VideoTogether 安装连接](https://apps.apple.com/app/userscripts/id1463298887), 安装插件
 
-1. IOS 15 及以上版本的苹果用户推荐使用 [userscripts](https://apps.apple.com/app/userscripts/id1463298887) 插件，安装后可在 Safari 浏览器使用
-
-2. 启用 userscripts 插件后，点击 [VideoTogether 插件安装链接](https://2gether.video/release/extension.user.js) 进行安装
+2. 打开安装好的软件, 按照软件界面上的步骤启用插件
 
 安装后在 Safari 浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
 
