@@ -24,14 +24,9 @@ Welcome to our Telegram：https://t.me/videotogether_group
 
 ## IOS 15 / iPad OS 15 or above
 
-The steps are complicated, please take a look at the installation tutorial video [Install VideoTogether on iPhone or iPad ](https://www.bilibili.com/video/BV19t4y1G7MB/?vd_source=1956535294dafbdc7ed9618b67807b9c)
+1. Click on the [VideoTogether installation link](https://apps.apple.com/app/videotogether/id6443755429) to install the extension
 
-Sorry, only Chinese video is available, hope you can understand to install it. VideoTogether will be published in
-App Store later, you can join our telegram to get more info.
-
-1. Install [userscripts](https://apps.apple.com/app/userscripts/id1463298887) extension and turn on it in the setting of Safari
-
-2. After the userscripts enabled，click [VideoTogether Installation link](https://2gether.video/release/extension.user.js) to install
+2. Open the installed app, and follow the steps on the app to enable the extension
 
 3. Open a new page like google in Safari, you will see VideoTogether window
 
