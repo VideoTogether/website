@@ -6,7 +6,6 @@
 [Chrome Store](https://chrome.google.com/webstore/detail/videotogether/dpjiaamadbcfheiamdaamhgpomlkohbn)
 )。**
 
-**其他任何安装方式出了问题我们都不提供技术支持，而且你有 100% 的可能性遇到兼容性问题**
 
 ## Windows / macOS
 
