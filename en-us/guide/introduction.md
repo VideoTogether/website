@@ -17,4 +17,3 @@ Share the room name with your friend and she/he can join your room
 
 Enter the room name and click 'Join' to automatically open the video the host is sharing
 
-No password required
