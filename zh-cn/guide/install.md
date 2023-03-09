@@ -2,9 +2,10 @@
 
 欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
 
-**请使用我们的推荐方式安装，如果你的设备不在安装说明中，请使用 Chrome 安装。**
+**请使用我们的推荐方式安装，如果你的设备不在安装说明中，请使用 Chrome 安装(
+[Chrome Store](https://chrome.google.com/webstore/detail/videotogether/dpjiaamadbcfheiamdaamhgpomlkohbn)
+)。**
 
-**其他任何安装方式出了问题我们都不提供技术支持，而且你有 100% 的可能性遇到兼容性问题**
 
 ## Windows / macOS
 

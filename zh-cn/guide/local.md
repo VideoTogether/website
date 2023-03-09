@@ -8,6 +8,8 @@
 
 浏览器支持的视频格式有限，你可能会遇到没声音，黑屏等等问题。
 
+如果你需要播放网络上的mp4,m3u8文件, 请访问 [HLSPlayer](https://www.hlsplayer.net/) 并搭配插件使用。 如果如果你有音轨,字幕,H265等浏览器不支持的播放需求,推荐使用 [Syncplay](https://syncplay.pl/)
+
 
 <script setup>
 import Local from '../../.vitepress/components/Local.vue'
