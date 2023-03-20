@@ -10,7 +10,9 @@ Welcome to our Telegram：https://t.me/videotogether_group
 <!-- 
 [Firefox Store](https://addons.mozilla.org/firefox/addon/videotogether/)
  -->
-[Chrome Store](https://chrome.google.com/webstore/detail/videotogether/dpjiaamadbcfheiamdaamhgpomlkohbn)
+[Chrome Store] temporarily unavailable, it will available in a few days
+<!-- 
+(https://chrome.google.com/webstore/detail/videotogether/dpjiaamadbcfheiamdaamhgpomlkohbn)  -->
 
 2. Open a new page like google in browser, you will see VideoTogether window
 
