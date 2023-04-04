@@ -5,7 +5,7 @@
 
 `<script src="https://2gether.video/release/extension.website.user.js"></script>`
 
-注意，如果你网站的视频播放器嵌套在 iframe中，需要在每一层 html 中都添加这行代码。否则插件会提示页面没有视频
+注意，如果你网站的视频播放器嵌套在 iframe, 并且 iframe 中的网页域名和网站域名不相同，你需要将代码添加到 iframe 网页中。否则插件会提示找不到视频，有任何问题都欢迎加群咨询。
 
 
 <br/>
