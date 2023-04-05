@@ -1,6 +1,6 @@
 # Installation
 
-Welcome to our Telegram：https://t.me/videotogether_group
+If you encounter any issues, feel free to give feedback at: https://github.com/VideoTogether/VideoTogether/issues
 
 ## Windows / macOS / Linux
 

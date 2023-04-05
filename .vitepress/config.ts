@@ -55,13 +55,13 @@ export default defineConfig({
     '/en-us/': {
       lang: 'en-US',
       title: 'VideoTogether',
-      description: 'Watch videos together with your family and friends, no matter how far away',
+      description: 'Watch videos online with your family and friends, no matter the distance between you',
       selectText: 'Languages',
     },
     '/': {
       lang: 'en-US',
       title: 'VideoTogether',
-      description: 'Watch videos together with your family and friends, no matter how far away',
+      description: 'Watch videos online with your family and friends, no matter the distance between you',
       selectText: 'Languages',
     }
   },
@@ -90,7 +90,7 @@ export default defineConfig({
         nav: navEn,
         lastUpdatedText: "Last Updated",
         footer: {
-          message: 'Welcome to join our Telegram：https://t.me/videotogether_group',
+          message: 'Give feedback: https://github.com/VideoTogether/VideoTogether/issues',
           copyright: "Copyright © 2022-present VideoTogether",
         },
       },
@@ -98,7 +98,7 @@ export default defineConfig({
         nav: navEn,
         lastUpdatedText: "Last Updated",
         footer: {
-          message: 'Welcome to join our Telegram：https://t.me/videotogether_group',
+          message: 'Give feedback: https://github.com/VideoTogether/VideoTogether/issues',
           copyright: "Copyright © 2022-present VideoTogether",
         },
       }

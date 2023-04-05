@@ -1,6 +1,6 @@
 # Guide
 
-Welcome to our Telegram：https://t.me/videotogether_group
+If you encounter any issues, feel free to give feedback at: https://github.com/VideoTogether/VideoTogether/issues
 
 After the VideoTogether extension is installed, open any website such as Google, and the extension window will appear in the lower right corner
 <!-- <img src="/examples/vt_window.png" style="max-width: 300px;"> -->
@@ -15,5 +15,5 @@ Share the room name with your friend and she/he can join your room
 
 ## Join Room
 
-Enter the room name and click 'Join' to automatically open the video the host is sharing
+Enter the room name and password, then click 'Join' to automatically open the video the host is sharing
 

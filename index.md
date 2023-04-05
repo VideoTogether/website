@@ -8,7 +8,7 @@ titleTemplate: Watch video together
 hero:
   name: VideoTogether
   text: Watch video together
-  tagline: Watch videos together with your family and friends, no matter how far away
+  tagline: Watch videos online with your family and friends, no matter the distance between you
   image:
     src: logo.png
     alt: VideoTogether
@@ -25,12 +25,12 @@ hero:
     
 
 features:
-  - title: Support all devices and operating systems
-    details: Support Windows PC, Linux PC, Android phone tablet TV, Mac, iPhone, iPad. Through Airplay, even Apple TV can also be perfectly supported.
-  - title: Support all online video and local videos
-    details: Support Youtube , Neflix and all other online video sites. Local videos played through the browser can also be synced
-  - title: Add VideoTogether to your website
-    details: Add watch-together feature to your video site with one line code
+  - title: Use on any device
+    details: Compatible with Windows PCs, Linux PCs, Android smartphones, tablets, and TVs, iPhone and iPad. Even supports Apple TV via AirPlay.
+  - title: Supports all online video platforms and local videos
+    details: Compatible with YouTube, Netflix, Disney+, and all other online video platforms. Browser-based local video playback can also be synchronized.
+  - title: Add watch-together functionality to your website
+    details: Integrate watch-together functionality into your video website with just one line of code.
 ---
 
 

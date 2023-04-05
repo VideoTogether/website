@@ -1,7 +1,4 @@
 # Q&A
 
 
-
-Coming soon...
-
-You can join our Telegram：https://t.me/videotogether_group for help or give feedback to us.
+You can visit https://github.com/VideoTogether/VideoTogether/issues for help or give feedback to us.
