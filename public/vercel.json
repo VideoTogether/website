@@ -14,7 +14,11 @@
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, s-maxage=259200, max-age=259200"
+          "value": "public, max-age=259200"
+        },
+        {
+          "key": "Age",
+          "value": "0"
         }
       ]
     }
