@@ -13,3 +13,6 @@
 将一起看功能添加到Alist请参考：[https://memos.shaneomo.top/m/13](https://memos.shaneomo.top/m/13)
 
 项目所有代码全部开源，任何问题都可以加入页面下的交流群咨询
+
+## 更多文档
+[为网页版 VideoTogether 添加设置功能](./website_setting)
