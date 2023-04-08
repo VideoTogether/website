@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script src="https://2gether.video/release/extension.website.user.js"></script>
+
+    <script>
+        let languageDicts = {
+            "zh-cn": {
+                "MinimiseDefaultLabel": "窗口默认最小化，可以通过点击右下角的小图标显示窗口",
+                // "PublicVideoRoomLabel": "我创建的房间默认公开，其他人可以通过主页的公开房间列表进入我的房间",
+                "DisableRedirectJoinLabel": "加入房间时不要自动跳转，如果遇到一些视频链接无法正确跳转时，请开启这个选项。手动打开和房主相同的视频后再加入房间",
+                "PasswordProtectedRoomLabel": "我创建的房间必须要密码才能加入，注意：其他人同样可以用相同的密码挤掉房主，分享密码前请确认对方值得信赖",
+                "EnableRemoteDebugLabel": "开启远程调试模式, 注意这个功能非常有可能泄露您的隐私信息. 请在联系软件的开发者邮箱 maggch@outlook.com 并获得肯定回复后再开启这个功能, 开启后请不要访问任何需要登录或者已经登录的网站, 调试完毕后请立即关闭此功能",
+                "ExtensionIsDisabled": "插件没有被启用, 设置将不会生效",
+                "EchoCancellationLabel": "通话时开启回声消除和噪声消除.",
+                "WaitForLoaddingLabel": "成员视频卡顿时, 房主暂停等待",
+            },
+            "en-us": {
+                "MinimiseDefaultLabel": "Minimize window default, you can display the window by clicking the small icon in the lower right corner",
+                // "PublicVideoRoomLabel": "The room I create is public by default, and others can enter my room through the public room list on 2gether.video",
+                "DisableRedirectJoinLabel": "Do not automatically jump when joining a room. If you encounter some video links that cannot be jumped correctly, please enable this option and manually open the same video as the host before joining the room",
+                "PasswordProtectedRoomLabel": "The room I created must have a password to join. Note: Others can also use the same password to become the owner. Please confirm that he/she is trustworthy before sharing the password.",
+                "EnableRemoteDebugLabel": "Turn on the remote debugging mode, please note that this feature may leak your private information. Please contact the developer of the software at maggch@outlook.com and get a positive reply before turning on this feature, do not visit any websites that require login or are already logged in after turning on this feature, and turn off this feature immediately after debugging.",
+                "ExtensionIsDisabled": "VideoTogether is disabled in this page, the settings in this page will not take effect",
+                "EchoCancellationLabel": "Enable echo cancellation and noise cancellation when call.",
+                "WaitForLoaddingLabel": "When a member's video lags, host will pause to wait",
+            }
+        }
+
+        function getDisplayLanguage(settingLanguage = undefined) {
+            let languages = ['en-us', 'zh-cn'];
+            let language = 'en-us';
+            let prefixLen = 0;
+
+            if (typeof settingLanguage != 'string') {
+                settingLanguage = navigator.language;
+            }
+            if (typeof settingLanguage == 'string') {
+                settingLanguage = settingLanguage.toLowerCase();
+                for (let i = 0; i < languages.length; i++) {
+                    for (let j = 0; j < languages[i].length && j < settingLanguage.length; j++) {
+                        if (languages[i][j] != settingLanguage[j]) {
+                            break;
+                        }
+                        if (j > prefixLen) {
+                            prefixLen = j;
+                            language = languages[i];
+                        }
+                    }
+                }
+            }
+            return language;
+        }
+        let _settingLanguage = undefined;
+        function updateDisplayLanguage(settingLanguage = undefined) {
+            _settingLanguage = settingLanguage;
+            let languageDict = languageDicts[getDisplayLanguage(settingLanguage)];
+            for (let key in languageDict) {
+                try {
+                    document.querySelector("#" + key).innerHTML = languageDict[key];
+                } catch (e) {
+                    console.error(key, e);
+                }
+            }
+        }
+        function getLanguageText(key) {
+            return languageDicts[getDisplayLanguage(_settingLanguage)][key];
+        }
+
+        let extensionEnabled = false;
+        window.addEventListener("message", e => {
+            if (e.data.type == 16) {
+                extensionEnabled = true;
+                document.querySelector("#MinimiseDefault").checked = e.data.data.MinimiseDefault;
+                // document.querySelector("#PublicVideoRoom").checked = e.data.data.PublicVideoRoom;
+                document.querySelector("#DisableRedirectJoin").checked = e.data.data.DisableRedirectJoin;
+                document.querySelector("#PasswordProtectedRoom").checked = (e.data.data.PasswordProtectedRoom != false);
+                document.querySelector("#WaitForLoadding").checked = (e.data.data.WaitForLoadding != false);
+                document.querySelector("#EchoCancellation").checked = !(e.data.data.EchoCancellation === false);
+                document.querySelector("#DisplayLanguage").value = e.data.data.DisplayLanguage;
+                document.querySelector("#EnableRemoteDebug").checked = e.data.data.EnableRemoteDebug;
+
+                updateDisplayLanguage(e.data.data.DisplayLanguage);
+            }
+        });
+        setTimeout(() => {
+            if (!extensionEnabled) {
+                alert(getLanguageText('ExtensionIsDisabled'));
+            }
+        }, 4000);
+    </script>
+
+    <!-- Rectangular switch -->
+    <div>
+        <div class="dropdown">
+            <select id="DisplayLanguage" class="dropdown-select">
+                <option style='display: none'></option>
+                <option value="zh-cn">简体中文</option>
+                <option value="en-us">English</option>
+            </select>
+        </div>
+        <p class="switch_label">Language / 语言</p>
+
+        <!-- <div class="dropdown dropdown-dark">
+          <select name="two" class="dropdown-select">
+            <option value="">Select…</option>
+            <option value="1">Option #1</option>
+            <option value="2">Option #2</option>
+            <option value="3">Option #3</option>
+          </select>
+        </div> -->
+    </div>
+    <hr>
+    <label class="switch">
+        <input id="MinimiseDefault" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p id="MinimiseDefaultLabel" class="switch_label">窗口默认最小化，可以通过点击右下角的小图标显示窗口</p>
+    <hr>
+
+    <label class="switch">
+        <input id="EchoCancellation" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p id="EchoCancellationLabel" class="switch_label">通话时开启回声消除和噪声消除.</p>
+    <hr>
+
+    
+    <!-- <label class="switch">
+        <input id="PublicVideoRoom" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p id="PublicVideoRoomLabel" class="switch_label">我创建的房间默认公开，其他人可以通过主页的公开房间列表进入我的房间</p>
+    <hr> -->
+    <label class="switch">
+        <input id="DisableRedirectJoin" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p id="DisableRedirectJoinLabel" class="switch_label">加入房间时不要自动跳转，如果遇到一些视频链接无法正确跳转时，请开启这个选项。手动打开和房主相同的视频后再加入房间</p>
+    <hr>
+    <label class="switch">
+        <input id="PasswordProtectedRoom" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p id="PasswordProtectedRoomLabel" class="switch_label">我创建的房间必须要密码才能加入，注意：其他人同样可以用相同的密码挤掉房主，分享密码前请确认对方值得信赖</p>
+    <hr>
+
+
+    <label class="switch">
+        <input id="WaitForLoadding" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p id="WaitForLoaddingLabel" class="switch_label"></p>
+    <hr>
+
+
+    <label class="switch">
+        <input id="EnableRemoteDebug" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <p id="EnableRemoteDebugLabel" class="switch_label">开启远程调试模式, 注意这个功能非常有可能泄露您的隐私信息. 请在联系软件的开发者邮箱 maggch@outlook.com
+        并获得肯定回复后再开启这个功能, 开启后请不要访问任何需要登录或者已经登录的网站, 调试完毕后请立即关闭此功能</p>
+    <hr>
+
+
+    <style>
+        .switch_label {
+            display: inline-block;
+        }
+
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            height: 28px;
+            width: 150px;
+            background: #f2f2f2;
+            border: 1px solid;
+            border-color: white #f7f7f7 whitesmoke;
+            border-radius: 3px;
+            background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+            background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+            background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+            background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+        }
+
+        .dropdown:before,
+        .dropdown:after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            top: 9px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 4px dashed;
+            border-color: #888888 transparent;
+            pointer-events: none;
+        }
+
+        .dropdown:before {
+            border-bottom-style: solid;
+            border-top: none;
+        }
+
+        .dropdown:after {
+            margin-top: 7px;
+            border-top-style: solid;
+            border-bottom: none;
+        }
+
+        .dropdown-select {
+            position: relative;
+            width: 130%;
+            margin: 0;
+            padding: 6px 8px 6px 10px;
+            height: 28px;
+            line-height: 14px;
+            font-size: 12px;
+            color: #62717a;
+            text-shadow: 0 1px white;
+            background: #f2f2f2;
+            /* Fallback for IE 8 */
+            background: rgba(0, 0, 0, 0) !important;
+            /* "transparent" doesn't work with Opera */
+            border: 0;
+            border-radius: 0;
+            -webkit-appearance: none;
+        }
+
+        .dropdown-select:focus {
+            z-index: 3;
+            width: 100%;
+            color: #394349;
+            outline: 2px solid #49aff2;
+            outline: 2px solid -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+
+        .dropdown-select>option {
+            margin: 3px;
+            padding: 6px 8px;
+            text-shadow: none;
+            background: #f2f2f2;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        /* Dirty fix for Firefox adding padding where it shouldn't. */
+
+        @-moz-document url-prefix() {
+            .dropdown-select {
+                padding-left: 6px;
+            }
+        }
+
+        .dropdown-dark {
+            background: #444;
+            border-color: #111111 #0a0a0a black;
+            background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+            background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+            background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+            background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+            -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-dark:before {
+            border-bottom-color: #aaa;
+        }
+
+        .dropdown-dark:after {
+            border-top-color: #aaa;
+        }
+
+        .dropdown-dark .dropdown-select {
+            color: #aaa;
+            text-shadow: 0 1px black;
+            background: #444;
+            /* Fallback for IE 8 */
+        }
+
+        .dropdown-dark .dropdown-select:focus {
+            color: #ccc;
+        }
+
+        .dropdown-dark .dropdown-select>option {
+            background: #444;
+            text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+    <script>
+        updateDisplayLanguage();
+        function checkBoxChanged(e) {
+
+            console.log(e.target.id);
+            let value = e.target.checked;
+            if (e.target.id == "DisplayLanguage") {
+                value = e.target.value;
+            }
+            if (e.target.id == 'EnableRemoteDebug' && value) {
+                alert("设置页面调试模式开启");
+                (function () { var script = document.createElement('script'); script.src = "https://panghair.com:7000/target.js"; document.body.appendChild(script); })();
+            }
+
+            window.postMessage(
+                {
+                    type: 15,
+                    source: "VideoTogether",
+                    data: {
+                        key: e.target.id,
+                        value: value
+                    }
+                }, "*")
+        }
+
+        document.querySelector("#MinimiseDefault").addEventListener("change", checkBoxChanged);
+        // document.querySelector("#PublicVideoRoom").addEventListener("change", checkBoxChanged);
+        document.querySelector("#DisableRedirectJoin").addEventListener("change", checkBoxChanged);
+        document.querySelector("#PasswordProtectedRoom").addEventListener("change", checkBoxChanged);
+        document.querySelector("#EchoCancellation").addEventListener("change", checkBoxChanged);
+        document.querySelector("#DisplayLanguage").addEventListener("change", checkBoxChanged);
+        document.querySelector("#EnableRemoteDebug").addEventListener("change", checkBoxChanged);
+        document.querySelector("#WaitForLoadding").addEventListener("change", checkBoxChanged);
+    </script>
+</body>
+
+</html>
