@@ -17,13 +17,13 @@ Windows / macOS 用户必须使用微软 Edge 浏览器
 
 ## 安卓
 
-安卓必须使用 [猴狐浏览器 下载链接](https://www.coolapk.com/apk/296754)
+安卓必须使用 [狐猴浏览器 下载链接](https://www.coolapk.com/apk/296754)
 
-使用猴狐浏览器访问 [VideoTogether 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) 安装 VideoTogether 插件
+使用狐猴浏览器访问 [VideoTogether 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) 安装 VideoTogether 插件
 
 如果下载按钮灰色，请等待一分钟
 
-安装后在猴狐浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
+安装后在狐猴浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
 
 
 ## IOS 15 / iPad OS 15 及以上版本
