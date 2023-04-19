@@ -1,6 +1,6 @@
 # 安装说明
 
-欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
+欢迎加入我们的交流群。QQ群： 204015847 ，Telegram：https://t.me/videotogether_group
 
 **请使用我们的推荐方式安装，如果你的设备不在安装说明中，请使用 Chrome 安装(
 [Chrome Store](https://chrome.google.com/webstore/detail/videotogether/dpjiaamadbcfheiamdaamhgpomlkohbn)

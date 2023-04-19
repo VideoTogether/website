@@ -2,7 +2,7 @@
 
 
 
-欢迎加入我们的交流群获取帮助。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
+欢迎加入我们的交流群获取帮助。QQ群： 204015847 ，Telegram：https://t.me/videotogether_group
 
 
 

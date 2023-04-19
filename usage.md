@@ -2,7 +2,7 @@
 
 ### 提问前请确认你是使用我们推荐的安装方式安装的，我们只保证推荐的安装方式工作正常
 
-欢迎加入我们的交流群获取帮助。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
+欢迎加入我们的交流群获取帮助。QQ群： 204015847 ，Telegram：https://t.me/videotogether_group
 
 ### Alook Via 浏览器怎么安装
 

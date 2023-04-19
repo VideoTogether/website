@@ -82,7 +82,7 @@ export default defineConfig({
         nav: nav,
         lastUpdatedText: "上次更新",
         footer: {
-          message: '欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group',
+          message: '欢迎加入我们的交流群。QQ群： 204015847 ，Telegram：https://t.me/videotogether_group',
           copyright: "Copyright © 2022-present VideoTogether",
         }
       },

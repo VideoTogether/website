@@ -1,6 +1,6 @@
 # 使用指南
 
-欢迎加入我们的交流群。QQ群： 170200260 ，Telegram：https://t.me/videotogether_group
+欢迎加入我们的交流群。QQ群： 204015847 ，Telegram：https://t.me/videotogether_group
 
 VideoTogether 插件安装完后，任意打开一个网站如百度，右下角就会出现插件的窗口
 
