@@ -19,11 +19,10 @@ document.head.appendChild(script);
 <template>
   <div style="margin: 20px;">
     <input style="" type="file" ref="file" @change="getFile($event)" />
-    <!-- <button class="btn" @click="">选择本地视频</button> -->
   </div>
 
   <div>
-    <video :src="videoUrl" style="width: 720px; height: 480px;" controls autoplay loop playsinline>你的浏览器不能支持HTML5视频</video>
+    <video :src="videoUrl" style="width: 720px; height: 480px;" controls autoplay loop playsinline></video>
   </div>
 </template>
 <style scoped>
