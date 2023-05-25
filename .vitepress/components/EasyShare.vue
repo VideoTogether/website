@@ -15,7 +15,7 @@ document.head.appendChild(extensionScript);
 window.m3u8Played = false;
 window.m3u8LoadSucc = false;
 setInterval(() => {
-    if (window.querySelector('.easyShareVideo') == null) {
+    if (document.querySelector('.easyShareVideo') == null) {
         window.VideoTogetherEasyShareMemberSite = false;
     }
     if (m3u8Url != window.location.hash.substring(1)) {
