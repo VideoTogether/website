@@ -12,7 +12,7 @@ function getFile(e)  {
 window.videoTogetherWebsiteSettingUrl = "/v2_website.html";
 
 let script = document.createElement('script');
-script.src ='https://2gether.video/release/extension.website.user.js';
+script.src ='/release/extension.website.user.js';
 document.head.appendChild(script);
 
 </script>

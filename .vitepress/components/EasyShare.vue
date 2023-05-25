@@ -9,12 +9,15 @@ script.src = "https://cdn.jsdelivr.net/npm/hls.js@latest";
 document.head.appendChild(script);
 
 let extensionScript = document.createElement('script');
-extensionScript.src ='/release/extension.website.user.js';
+extensionScript.src = '/release/extension.website.user.js';
 document.head.appendChild(extensionScript);
 
 window.m3u8Played = false;
 window.m3u8LoadSucc = false;
 setInterval(() => {
+    if (window.querySelector('.easyShareVideo') == null) {
+        window.VideoTogetherEasyShareMemberSite = false;
+    }
     if (m3u8Url != window.location.hash.substring(1)) {
         window.location.reload();
     }
@@ -64,13 +67,20 @@ function playM3u8(url) {
     console.log("123");
     let hlsVideo = document.querySelector("#hlsVideo");
     let nativeVideo = document.querySelector("#nativeVideo");
-    if (Hls.isSupported()) {
-        var hls = new Hls();
-        var m3u8Url = decodeURIComponent(url)
-        hls.loadSource(m3u8Url);
-        hls.attachMedia(hlsVideo);
-    }
-    nativeVideo.src = url;
+    try {
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            var m3u8Url = decodeURIComponent(url)
+            hls.loadSource(m3u8Url);
+            hls.attachMedia(hlsVideo);
+            hlsVideo.load();
+        }
+    } catch { }
+    try {
+        nativeVideo.src = url;
+        nativeVideo.load();
+    } catch { }
+
 }
 
 </script>
