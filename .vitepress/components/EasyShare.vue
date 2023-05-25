@@ -8,9 +8,9 @@ let script = document.createElement('script');
 script.src = "https://cdn.jsdelivr.net/npm/hls.js@latest";
 document.head.appendChild(script);
 
-// let extensionScript = document.createElement('script');
-// extensionScript.src ='https://2gether.video/release/extension.website.user.js';
-// document.head.appendChild(extensionScript);
+let extensionScript = document.createElement('script');
+extensionScript.src ='/release/extension.website.user.js';
+document.head.appendChild(extensionScript);
 
 window.m3u8Played = false;
 window.m3u8LoadSucc = false;
