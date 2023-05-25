@@ -7,8 +7,8 @@
 <h1 id="StatusText" style="color:#FF5555">视频加载中...</h1>
 
 
-<video id="hlsVideo" controls></video>
-<video id="nativeVideo" controls></video>
+<video class="easyShareVideo" id="hlsVideo" controls></video>
+<video class="easyShareVideo" id="nativeVideo" controls></video>
 
 <script setup>
 import EasyShare from '../.vitepress/components/EasyShare.vue'
