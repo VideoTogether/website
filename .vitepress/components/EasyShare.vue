@@ -77,8 +77,8 @@ function playM3u8(url) {
         }
     } catch { }
     try {
-        nativeVideo.src = url;
-        nativeVideo.load();
+        // nativeVideo.src = url;
+        // nativeVideo.load();
     } catch { }
 
 }
