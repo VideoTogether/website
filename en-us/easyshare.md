@@ -20,7 +20,7 @@ import EasyShare from '../.vitepress/components/EasyShare.vue'
 
 
 <!-- **如果该功能侵犯了您的任何权益：点击此处反馈并查看如何在您的网站上禁用该功能** -->
-**如果该功能侵犯了您的任何权益：请加群反馈，并临时使用以下代码在您的网站上禁用轻松分享**
+**If this feature infringes on any of your rights, please report it on https://github.com/VideoTogether/VideoTogether/issues. In the meantime, you can use the following code to temporarily disable easy share on your website.**
 ```
 window.VideoTogetherEasyShare = 'disabled'
 ```
