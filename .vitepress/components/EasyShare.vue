@@ -15,6 +15,14 @@ document.head.appendChild(extensionScript);
 window.m3u8Played = false;
 window.m3u8LoadSucc = false;
 setInterval(() => {
+    function emptyStrIfUdf(s) {
+        return s == undefined ? "" : s;
+    }
+
+    document.querySelector('#originalVideoUrl').innerText = emptyStrIfUdf(window.VideoTogetherEasyShareTitle);
+    document.querySelector('#originalVideoUrl').href = emptyStrIfUdf(window.VideoTogetherEasyShareUrl);
+
+
     if (document.querySelector('.easyShareVideo') == null) {
         window.VideoTogetherEasyShareMemberSite = false;
     }
@@ -54,7 +62,7 @@ setInterval(() => {
 
     setTimeout(() => {
         if (!window.m3u8LoadSucc) {
-            setStatusText("视频加载过久, 该视频可能不支持轻松分享。建议安装插件进行同步")
+            setStatusText(document.querySelector('#LoadTimeoutText').innerText);
         }
     }, 10000);
 }, 1000);
@@ -64,7 +72,6 @@ function setStatusText(s) {
 }
 
 function playM3u8(url) {
-    console.log("123");
     let hlsVideo = document.querySelector("#hlsVideo");
     let nativeVideo = document.querySelector("#nativeVideo");
     try {

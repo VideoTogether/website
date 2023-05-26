@@ -1,11 +1,11 @@
-# 轻松分享 (该功能测试中，遇到问题请加群反馈，帮助我们完善该功能)
+# Easy Share (Beta version, please give feedback in github or store if you have any problem)
 
-**原视频链接：**<a id="originalVideoUrl"></a>
+**Origianl video link：**<a id="originalVideoUrl"></a>
 
-视频出现加载失败，无法同步，卡顿等问题可能是浏览器兼容性导致，推荐安装插件版VideoTogether获得更好的体验
+Loading failures, synchronization issues, and buffering in the video may be due to browser compatibility. We recommend installing the VideoTogether extension for a better experience
 
-<h1 id="StatusText" style="color:#FF5555">视频加载中...</h1>
-<p style="display:none;" id="LoadTimeoutText">视频加载过久, 该视频可能不支持轻松分享。建议安装插件进行同步</p>
+<h1 id="StatusText" style="color:#FF5555">Loadding video...</h1>
+<p style="display:none;" id="LoadTimeoutText">The video is taking too long to load; it might cannot be easy shared. We recommend installing VideoTogether extension to sync.</p>
 
 <video class="easyShareVideo" id="hlsVideo" controls autoplay playsinline></video>
 <video class="easyShareVideo" id="nativeVideo" controls autoplay playsinline></video>
