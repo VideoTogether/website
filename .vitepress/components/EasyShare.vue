@@ -56,13 +56,20 @@ setInterval(() => {
     if (window.m3u8Played) {
         return;
     }
-
+    // only run once
     window.m3u8Played = true;
     playM3u8(m3u8Url);
 
     setTimeout(() => {
         if (!window.m3u8LoadSucc) {
             setStatusText(document.querySelector('#LoadTimeoutText').innerText);
+        }
+        if (m3u8Url != "") {
+            if (window.m3u8LoadSucc) {
+                fetch(window.videoTogetherExtension.video_together_host + "/beta/counter?key=easyshare_succ")
+            } else {
+                fetch(window.videoTogetherExtension.video_together_host + "/beta/counter?key=easyshare_err")
+            }
         }
     }, 10000);
 }, 1000);
