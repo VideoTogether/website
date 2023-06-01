@@ -14,6 +14,8 @@ let iframe = document.createElement("iframe");
 iframe.src = "data:text/html;base64," + btoa(playerHtml);
 iframe.width = "100%";
 iframe.height = "300px";
+iframe.setAttribute("frameBorder", "0")
+iframe.setAttribute("allowfullscreen","")
 document.querySelector('#hlsFrame').appendChild(iframe);
 
 setInterval(() => {
