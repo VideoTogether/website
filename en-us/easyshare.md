@@ -9,6 +9,7 @@ Loading failures, synchronization issues, and buffering in the video may be due 
 
 <video class="easyShareVideo" id="hlsVideo" controls autoplay playsinline></video>
 <video class="easyShareVideo" id="nativeVideo" controls autoplay playsinline></video>
+<div id="hlsFrame" class="easyShareVideo"></div>
 
 <script setup>
 import EasyShare from '../.vitepress/components/EasyShare.vue'
