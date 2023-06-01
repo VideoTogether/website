@@ -58,9 +58,11 @@ setInterval(() => {
         if (e.data == 'hlsVideoReady') {
             window.m3u8LoadSucc = true;
             try {
+                videoTogetherExtension.videoMap.delete(hlsVideo.VideoTogetherVideoId);
                 hlsVideo.remove();
             } catch { };
             try {
+                videoTogetherExtension.videoMap.delete(nativeVideo.VideoTogetherVideoId);
                 nativeVideo.remove();
             } catch { }
             document.querySelector('#hlsFrame').style.display = "block";
@@ -71,6 +73,11 @@ setInterval(() => {
         if (hlsVideo.readyState >= 3) {
             window.m3u8LoadSucc = true;
             hlsVideo.style.display = "block";
+            Array.from(videoTogetherExtension.videoMap.keys()).forEach(k => {
+                if (k != hlsVideo.VideoTogetherVideoId) {
+                    videoTogetherExtension.videoMap.delete(k);
+                }
+            })
             nativeVideo.remove();
             iframe.remove();
             setStatusText("");
