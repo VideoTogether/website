@@ -47,7 +47,7 @@ window.addEventListener("message", e => {
 })
 
 let normalFetchSuccCount = 0
-
+let loadingUlr = {}
 async function superSuperFetch(context) {
     return new Promise(async (res, rej) => {
         try {
@@ -55,13 +55,13 @@ async function superSuperFetch(context) {
                 res(blob)
                 normalFetchSuccCount++;
             }).catch(e => {
-                if (normalFetchSuccCount > 10) {
-                    console.log("normal fetch failed");
+                console.log("normal fetch failed");
+                if (normalFetchSuccCount > 5) {
                     rej();
                 }
             });
         } catch { }
-        if (normalFetchSuccCount > 10) {
+        if (normalFetchSuccCount > 5) {
             return;
         }
         try {
@@ -228,10 +228,18 @@ function playM3u8(url) {
                 fLoader: class CustomFLoader extends Hls.DefaultConfig.loader {
                     async load(context, config, callbacks) {
                         let start = Date.now() / 1000;
+                        if (loadingUlr[context.url]) {
+                            console.log("duplicate, abort");
+                            super.abort();
+                            return;
+                        }
+                        loadingUlr[context.url] = true;
                         try {
                             context.url = URL.createObjectURL(await superSuperFetch(context));
                         } catch (e) {
                             console.log("abort");
+                        } finally {
+                            loadingUlr[context.url] = false;
                         }
                         let end = Date.now() / 1000;
                         console.log("fetch time", end - start);
