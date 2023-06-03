@@ -183,7 +183,46 @@ function playM3u8(url) {
                 pLoader: class CustomLoader extends Hls.DefaultConfig.loader {
                     load(context, config, callbacks) {
                         console.log(context);
-                        super.load(context, config, callbacks);
+                        function limitStream(stream, limit) {
+                            const reader = stream.getReader();
+                            let bytesRead = 0;
+
+                            return new ReadableStream({
+                                async pull(controller) {
+                                    const { value, done } = await reader.read();
+
+                                    if (done || bytesRead >= limit) {
+                                        controller.close();
+                                        return;
+                                    }
+
+                                    bytesRead += value.byteLength;
+                                    controller.enqueue(value);
+                                },
+
+                                cancel(reason) {
+                                    reader.cancel(reason);
+                                }
+                            });
+                        }
+                        function isM3U8(textContent) {
+                            return textContent.trim().startsWith('#EXTM3U');
+                        }
+                        const abortController = new AbortController();
+                        fetch(context.url, { signal: abortController.signal }).then(response => {
+                            const limitedStream = limitStream(response.body, 1024); // Limit to 1MB
+                            return new Response(limitedStream, { headers: response.headers });
+                        }).then(r => r.text())
+                            .then(txt => {
+                                abortController.abort();
+                                if (isM3U8(txt)) {
+                                    super.load(context, config, callbacks);
+                                } else {
+                                    console.error("is not m3u8", txt);
+                                }
+                            }).catch(e => {
+                                super.abort();
+                            })
                     }
                 },
                 fLoader: class CustomFLoader extends Hls.DefaultConfig.loader {
