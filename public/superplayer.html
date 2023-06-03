@@ -1,67 +1,22 @@
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.2.1"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.2.1/hls.js"></script>
-    <!-- for debug only -->
-    <script src="http://127.0.0.1:7000/release/extension.website_debug.user.js"></script>
-
-    <script src="EXTENSION_JS"></script>
-</head>
-
 <body>
-    <video controls></video>
     <script>
-        const realUrlCache = {};
-        window.realUrlCache = realUrlCache;
-        let hlsVideo = document.querySelector('video');
-        if (Hls.isSupported()) {
-            var hls = new Hls({
-                pLoader: class CustomLoader extends Hls.DefaultConfig.loader {
-                    load(context, config, callbacks) {
-                        console.log(context);
-                        super.load(context, config, callbacks);
-                    }
-                },
-                fLoader: class CustomFLoader extends Hls.DefaultConfig.loader {
-                    async load(context, config, callbacks) {
-                        try {
-                            let url = await videoTogetherExtension.FetchRemoteRealUrl(context.frag.baseurl, context.frag.sn, context.url);
-                            context.url = url;
-                            realUrlCache[context.url] = url;
-                        } catch (e) { console.error(e) }
-                        console.log(context);
-                        super.load(context, config, callbacks);
-                    }
-                },
-                autoStartLoad: true,
-            });
-
-            hls.on(Hls.Events.ERROR, function (errMes) {
-                console.error(errMes);
-            });
-            const m3u8Url = 'M3U8_URL';
-            hls.attachMedia(hlsVideo);
-            hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-                hls.loadSource(m3u8Url);
-            })
-            hlsVideo.load();
-        }
-        setInterval(() => {
-            if (hlsVideo.readyState >= 3) {
-                window.top.postMessage('hlsVideoReady', '*');
+        window.addEventListener("message", async e => {
+            if (e.data.method == "fetch") {
+                try {
+                    const blob = await (await fetch(e.data.url)).blob();
+                    window.top.postMessage({
+                        method: "fetchResponse",
+                        blob: blob,
+                        url: e.data.url
+                    }, "*")
+                } catch (e) {
+                    window.top.postMessage({
+                        method: "fetchResponse",
+                        error: e,
+                        url: e.data.url
+                    }, "*")
+                }
             }
-        }, 1000);
+        });
     </script>
-    <style>
-        video {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        html,
-        body {
-            border: 0px;
-            margin: 0px;
-            padding: 0px;
-        }
-    </style>
 </body>

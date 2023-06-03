@@ -4,12 +4,11 @@
 
 Loading failures, synchronization issues, and buffering in the video may be due to browser compatibility. We recommend installing the VideoTogether extension for a better experience
 
-<h1 id="StatusText" style="color:#FF5555">Loadding video...</h1>
+<h1 id="StatusText" style="color:#FF5555">Loading video...</h1>
 <p style="display:none;" id="LoadTimeoutText">The video is taking too long to load; it might cannot be easy shared. We recommend installing VideoTogether extension to sync.</p>
 
 <video class="easyShareVideo" id="hlsVideo" controls autoplay playsinline></video>
 <video class="easyShareVideo" id="nativeVideo" controls autoplay playsinline></video>
-<div id="hlsFrame" class="easyShareVideo"></div>
 
 <script setup>
 import EasyShare from '../.vitepress/components/EasyShare.vue'

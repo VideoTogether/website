@@ -1,8 +1,9 @@
 <head>
-
+    <script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.2.1/hls.js"></script>
 </head>
 
 <body>
+    <video controls></video>
     <script>
         (async function () {
 
@@ -14,28 +15,88 @@
                 }
             }, 1000)
             let playerHtml = await (await fetch('./superplayer.html?x=' + Date.now())).text();
-            // this can be hack, but I think the hack can do nothing in this page
-            // SEO AD?
-            playerHtml = playerHtml.replace('M3U8_URL', m3u8Url.replace(/'/g, ""));
             console.log(btoa(playerHtml));
             let iframe = document.createElement("iframe");
             iframe.style.display = 'none'
             iframe.src = "data:text/html;base64," + btoa(playerHtml);
-            iframe.width = "100%";
-            iframe.height = "100%";
             document.body.appendChild(iframe);
+            // this can be hack, but I think the hack can do nothing in this page
+            // SEO AD?
+            // playerHtml = playerHtml.replace('M3U8_URL', m3u8Url.replace(/'/g, ""));
+            const hlsVideo = document.querySelector("video");
+            const blobCache = {}
+            window.blobCache = blobCache;
             window.addEventListener("message", e => {
-                if (e.data == 'hlsVideoReady') {
-                    iframe.style.display = "block";
+                if (e.data.method == "fetchResponse") {
+                    blobCache[e.data.url] = e.data.blob;
                 }
             })
+            async function superFetch(url) {
+                return new Promise(async (res, rej) => {
+                    try {
+                        let blob = await (await fetch(url)).blob();
+                        blobCache[url] = blob;
+                        res(blob);
+                    } catch (e) { }
+                    let id;
+                    try {
+                        iframe.contentWindow.postMessage({
+                            method: "fetch",
+                            url: url
+                        }, '*');
+                        id = setInterval(() => {
+                            if (blobCache[url] != undefined) {
+                                res(blobCache[url]);
+                                console.log("id", id);
+                                clearInterval(id);
+                            }
+                        }, 200);
+                    } catch (e) { }
+                    setTimeout(() => {
+                        rej(null);
+                        clearInterval(id);
+                    }, 5000);
+                });
+            }
+
+            if (Hls.isSupported()) {
+                var hls = new Hls({
+                    pLoader: class CustomLoader extends Hls.DefaultConfig.loader {
+                        load(context, config, callbacks) {
+                            console.log(context);
+                            super.load(context, config, callbacks);
+                        }
+                    },
+                    fLoader: class CustomFLoader extends Hls.DefaultConfig.loader {
+                        async load(context, config, callbacks) {
+                            try {
+                                let url = await videoTogetherExtension.FetchRemoteRealUrl(context.frag.baseurl, context.frag.sn, context.url);
+                                context.url = URL.createObjectURL(await superFetch(url));
+                                console.log("remote url", url);
+                            } catch (e) { console.error(e, "FetchRemoteRealUrl") }
+                            super.load(context, config, callbacks);
+                        }
+                    },
+                    autoStartLoad: true,
+                });
+
+                hls.on(Hls.Events.ERROR, function (errMes) {
+                    console.error(errMes);
+                });
+                hls.attachMedia(hlsVideo);
+                hls.on(Hls.Events.MEDIA_ATTACHED, function () {
+                    hls.loadSource(m3u8Url);
+                })
+                hlsVideo.load();
+            }
+
+
+
         })()
     </script>
     <style>
-        iframe {
-            border: none;
-            max-width: 100%;
-            max-height: 100%;
+        video {
+            width: 100%;
         }
     </style>
 </body>
