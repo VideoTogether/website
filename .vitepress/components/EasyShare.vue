@@ -160,7 +160,7 @@ setInterval(() => {
         if (!window.m3u8LoadSucc) {
             setStatusText(document.querySelector('#LoadTimeoutText').innerText);
         }
-        if (m3u8Url != "") {
+        if (m3u8Url != "" && videoTogetherExtension.roomName != "" && videoTogetherExtension.roomName != "test") {
             if (window.m3u8LoadSucc) {
                 fetch(window.videoTogetherExtension.video_together_host + "/beta/counter?key=easyshare_succ")
             } else {
