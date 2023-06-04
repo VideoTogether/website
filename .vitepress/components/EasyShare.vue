@@ -234,15 +234,16 @@ function playM3u8(url) {
                             return;
                         }
                         loadingUlr[context.url] = true;
-                        try {
-                            context.url = URL.createObjectURL(await superSuperFetch(context));
-                        } catch (e) {
-                            console.log("abort");
-                        } finally {
-                            loadingUlr[context.url] = false;
+                        if (normalFetchSuccCount < 5) {
+                            try {
+                                context.url = URL.createObjectURL(await superSuperFetch(context));
+                            } catch (e) {
+                                console.log("abort");
+                            }
                         }
                         let end = Date.now() / 1000;
                         console.log("fetch time", end - start);
+                        loadingUlr[context.url] = false;
                         super.load(context, config, callbacks);
                     }
                 },
