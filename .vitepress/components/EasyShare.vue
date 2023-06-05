@@ -164,7 +164,7 @@ setInterval(() => {
             if (window.m3u8LoadSucc) {
                 fetch(window.videoTogetherExtension.video_together_host + "/beta/counter?key=easyshare_succ")
             } else {
-                fetch(window.videoTogetherExtension.video_together_host + "/beta/counter?key=easyshare_err&failedUrl="+document.querySelector('#originalVideoUrl').href);
+                fetch(window.videoTogetherExtension.video_together_host + "/beta/counter?key=easyshare_err&failedUrl=" + encodeURIComponent(document.querySelector('#originalVideoUrl').href + "#" + navigator.userAgent));
             }
         }
     }, 10000);
