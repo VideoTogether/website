@@ -45,6 +45,12 @@ const navEn = [
   }
 ]
 export default defineConfig({
+  head: [
+    [
+      'meta',
+      { name: "referrer", content: "no-referrer" }
+    ]
+  ],
   locales: {
     '/zh-cn/': {
       lang: 'zh-CN',
