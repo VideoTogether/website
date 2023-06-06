@@ -1,8 +1,9 @@
 <script setup>
 
 window.VideoTogetherEasyShareMemberSite = true;
-const m3u8Url = decodeURIComponent(window.location.hash.substring(1));
-
+const m3u8Url = (window.location.hash.substring(1));
+const m3u8ContentCache = {}
+window.m3u8ContentCache = m3u8ContentCache;
 let playerHtml = await(await fetch('/superplayer.html?x=' + Date.now())).text();
 let iframe = document.createElement("iframe");
 iframe.style.display = 'none'
@@ -112,7 +113,7 @@ setInterval(() => {
     if (document.querySelector('.easyShareVideo') == null) {
         window.VideoTogetherEasyShareMemberSite = false;
     }
-    if (m3u8Url != decodeURIComponent(window.location.hash.substring(1))) {
+    if (m3u8Url != (window.location.hash.substring(1))) {
         window.location.reload();
     }
     let hlsVideo = document.querySelector("#hlsVideo");
@@ -180,6 +181,14 @@ function playM3u8(url) {
     try {
         if (Hls.isSupported()) {
             var hls = new Hls({
+                xhrSetup: function (xhr, url) {
+                    if (m3u8ContentCache[url] != undefined) {
+                        console.log(url, m3u8ContentCache[url]);
+                        xhr.open('GET', URL.createObjectURL(new Blob([m3u8ContentCache[url]], {
+                            type: 'text/plain'
+                        })), true);
+                    }
+                },
                 pLoader: class CustomLoader extends Hls.DefaultConfig.loader {
                     load(context, config, callbacks) {
                         console.log(context);
@@ -208,25 +217,43 @@ function playM3u8(url) {
                         function isM3U8(textContent) {
                             return textContent.trim().startsWith('#EXTM3U');
                         }
+                        let FetchRemoteM3u8Content = async ()=> {
+                            while (true) {
+                                console.log("FetchRemoteM3u8Content");
+                                try {
+                                    let remoteM3u8Content = await videoTogetherExtension.FetchRemoteM3u8Content(context.url);
+                                    m3u8ContentCache[context.url] = remoteM3u8Content;
+                                    super.load(context, config, callbacks);
+                                    break;
+                                } catch (e) {
+                                }
+                            }
+                        }
                         const abortController = new AbortController();
                         fetch(context.url, { signal: abortController.signal }).then(response => {
                             const limitedStream = limitStream(response.body, 1024); // Limit to 1MB
                             return new Response(limitedStream, { headers: response.headers });
                         }).then(r => r.text())
-                            .then(txt => {
+                            .then(async txt => {
                                 abortController.abort();
                                 if (isM3U8(txt)) {
+                                    console.log("normal fetch m3u8");
                                     super.load(context, config, callbacks);
                                 } else {
-                                    console.error("is not m3u8", txt);
+                                    FetchRemoteM3u8Content();
                                 }
                             }).catch(e => {
-                                super.abort();
+                                FetchRemoteM3u8Content();
                             })
                     }
                 },
                 fLoader: class CustomFLoader extends Hls.DefaultConfig.loader {
                     async load(context, config, callbacks) {
+                        console.log(context);
+                        if(context.url.startsWith('blob')){
+                            // TODO save the blob url to m3u8 real url
+                            context.url = new URL(context.frag.relurl, m3u8Url);
+                        }
                         let start = Date.now() / 1000;
                         if (loadingUlr[context.url]) {
                             console.log("duplicate, abort");
@@ -250,7 +277,7 @@ function playM3u8(url) {
                 autoStartLoad: true,
             });
             window.hls = hls;
-            var m3u8Url = decodeURIComponent(url)
+            var m3u8Url = (url);
             hls.loadSource(m3u8Url);
             hls.attachMedia(hlsVideo);
             hlsVideo.load();
