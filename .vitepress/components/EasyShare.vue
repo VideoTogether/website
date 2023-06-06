@@ -226,6 +226,7 @@ function playM3u8(url) {
                                     super.load(context, config, callbacks);
                                     break;
                                 } catch (e) {
+                                    await new Promise(r => setTimeout(r, 500));
                                 }
                             }
                         }
