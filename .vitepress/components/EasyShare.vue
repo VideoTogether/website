@@ -161,7 +161,10 @@ setInterval(() => {
         if (!window.m3u8LoadSucc) {
             setStatusText(document.querySelector('#LoadTimeoutText').innerText);
         }
-        if (m3u8Url != "" && videoTogetherExtension.roomName != "" && videoTogetherExtension.roomName != "test") {
+        if (m3u8Url != ""
+            && videoTogetherExtension.roomName != ""
+            && videoTogetherExtension.roomName != "test"
+            && document.querySelector('#originalVideoUrl').href != window.location.href) {
             if (window.m3u8LoadSucc) {
                 fetch(window.videoTogetherExtension.video_together_host + "/beta/counter?key=easyshare_succ")
             } else {
@@ -217,7 +220,7 @@ function playM3u8(url) {
                         function isM3U8(textContent) {
                             return textContent.trim().startsWith('#EXTM3U');
                         }
-                        let FetchRemoteM3u8Content = async ()=> {
+                        let FetchRemoteM3u8Content = async () => {
                             while (true) {
                                 console.log("FetchRemoteM3u8Content");
                                 try {
@@ -251,7 +254,7 @@ function playM3u8(url) {
                 fLoader: class CustomFLoader extends Hls.DefaultConfig.loader {
                     async load(context, config, callbacks) {
                         console.log(context);
-                        if(context.url.startsWith('blob')){
+                        if (context.url.startsWith('blob')) {
                             // TODO save the blob url to m3u8 real url
                             context.url = new URL(context.frag.relurl, m3u8Url);
                         }
