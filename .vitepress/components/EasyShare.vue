@@ -16,7 +16,7 @@ document.body.appendChild(iframe);
 setInterval(() => {
     videoTogetherExtension.url = window.location.href;
     try {
-        if (window.navigator.userAgent.toLowerCase().indexOf('micromessenger') == -1) {
+        if (window.navigator.userAgent.toLowerCase().indexOf('micromessenger') != -1) {
             document.querySelector("#WechatAlert").style.display = "block"
         }
     } catch { }
