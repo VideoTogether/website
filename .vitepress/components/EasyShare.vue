@@ -15,6 +15,11 @@ document.body.appendChild(iframe);
 
 setInterval(() => {
     videoTogetherExtension.url = window.location.href;
+    try{
+        if(window.navigator.userAgent.toLowerCase().indexOf('micromessenger')==-1){
+            document.querySelector("#WechatAlert").style.display == "Block"
+        }
+    }catch{}
 }, 1000)
 window.addEventListener("popstate", e => {
     videoTogetherExtension.url = window.location.href;
@@ -304,6 +309,9 @@ function playM3u8(url) {
 <style >
 .easyShareVideo {
     max-width: 100%;
+    display: none;
+}
+#WechatAlert{
     display: none;
 }
 </style>
