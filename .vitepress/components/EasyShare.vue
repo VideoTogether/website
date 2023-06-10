@@ -3,6 +3,9 @@
 window.VideoTogetherEasyShareMemberSite = true;
 const m3u8Url = (window.location.hash.substring(1));
 const m3u8ContentCache = {}
+const m3u8BlobUrlTom3u8Url = {}
+m3u8BlobUrlTom3u8Url[m3u8Url] = m3u8Url;
+window.m3u8BlobUrlTom3u8Url = m3u8BlobUrlTom3u8Url;
 window.m3u8ContentCache = m3u8ContentCache;
 let playerHtml = await(await fetch('/superplayer.html?x=' + Date.now())).text();
 let iframe = document.createElement("iframe");
@@ -51,30 +54,35 @@ let normalFetchSuccCount = 0
 let loadingUlr = {}
 async function superSuperFetch(context) {
     return new Promise(async (res, rej) => {
+        async function niubiFetch() {
+            try {
+                let start = Date.now() / 1000;
+                let realUrl = await videoTogetherExtension.FetchRemoteRealUrl(m3u8BlobUrlTom3u8Url[context.frag.baseurl], context.frag.sn, context.url);
+                let end = Date.now() / 1000;
+                console.log("FetchRemoteRealUrl time", end - start);
+                res(await superFetch(realUrl));
+            } catch (e) {
+                console.error("super fetch failed", e);
+                rej()
+            }
+        }
+
         try {
-            fetch(context.url).then(r => r.blob()).then(blob => {
-                res(blob)
+            try {
+                let blob = await (await fetch(context.url)).blob();
+                res(blob);
                 normalFetchSuccCount++;
-            }).catch(e => {
+            } catch {
                 console.log("normal fetch failed");
                 if (normalFetchSuccCount > 5) {
-                    rej();
+                    await niubiFetch();
                 }
-            });
+            }
         } catch { }
         if (normalFetchSuccCount > 5) {
             return;
         }
-        try {
-            let start = Date.now() / 1000;
-            let realUrl = await videoTogetherExtension.FetchRemoteRealUrl(context.frag.baseurl, context.frag.sn, context.url);
-            let end = Date.now() / 1000;
-            console.log("FetchRemoteRealUrl time", end - start);
-            res(await superFetch(realUrl));
-        } catch (e) {
-            console.error("super fetch failed", e);
-            rej()
-        }
+        await niubiFetch();
     });
 }
 
@@ -184,14 +192,6 @@ function playM3u8(url) {
     try {
         if (Hls.isSupported()) {
             var hls = new Hls({
-                xhrSetup: function (xhr, url) {
-                    if (m3u8ContentCache[url] != undefined) {
-                        console.log(url, m3u8ContentCache[url]);
-                        xhr.open('GET', URL.createObjectURL(new Blob([m3u8ContentCache[url]], {
-                            type: 'text/plain'
-                        })), true);
-                    }
-                },
                 pLoader: class CustomLoader extends Hls.DefaultConfig.loader {
                     load(context, config, callbacks) {
                         console.log(context);
@@ -226,6 +226,11 @@ function playM3u8(url) {
                                 try {
                                     let remoteM3u8Content = await videoTogetherExtension.FetchRemoteM3u8Content(context.url);
                                     m3u8ContentCache[context.url] = remoteM3u8Content;
+                                    let m3u8BlobUrl = URL.createObjectURL(new Blob([m3u8ContentCache[context.url]], {
+                                        type: 'text/plain'
+                                    }));
+                                    m3u8BlobUrlTom3u8Url[m3u8BlobUrl] = context.url;
+                                    context.url = m3u8BlobUrl;
                                     super.load(context, config, callbacks);
                                     break;
                                 } catch (e) {
@@ -256,7 +261,7 @@ function playM3u8(url) {
                         console.log(context);
                         if (context.url.startsWith('blob')) {
                             // TODO save the blob url to m3u8 real url
-                            context.url = new URL(context.frag.relurl, m3u8Url);
+                            context.url = new URL(context.frag.relurl, m3u8BlobUrlTom3u8Url[context.frag.baseurl]);
                         }
                         let start = Date.now() / 1000;
                         if (loadingUlr[context.url]) {
@@ -265,12 +270,12 @@ function playM3u8(url) {
                             return;
                         }
                         loadingUlr[context.url] = true;
-                        if (normalFetchSuccCount < 5) {
-                            try {
-                                context.url = URL.createObjectURL(await superSuperFetch(context));
-                            } catch (e) {
-                                console.log("abort");
-                            }
+                        try {
+                            context.url = URL.createObjectURL(await superSuperFetch(context));
+                        } catch (e) {
+                            console.log("abort");
+                            super.abort();
+                            return;
                         }
                         let end = Date.now() / 1000;
                         console.log("fetch time", end - start);
