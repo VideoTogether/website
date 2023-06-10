@@ -15,11 +15,11 @@ document.body.appendChild(iframe);
 
 setInterval(() => {
     videoTogetherExtension.url = window.location.href;
-    try{
-        if(window.navigator.userAgent.toLowerCase().indexOf('micromessenger')==-1){
-            document.querySelector("#WechatAlert").style.display == "Block"
+    try {
+        if (window.navigator.userAgent.toLowerCase().indexOf('micromessenger') == -1) {
+            document.querySelector("#WechatAlert").style.display = "block"
         }
-    }catch{}
+    } catch { }
 }, 1000)
 window.addEventListener("popstate", e => {
     videoTogetherExtension.url = window.location.href;
@@ -311,7 +311,8 @@ function playM3u8(url) {
     max-width: 100%;
     display: none;
 }
-#WechatAlert{
+
+#WechatAlert {
     display: none;
 }
 </style>
