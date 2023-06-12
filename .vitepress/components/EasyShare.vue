@@ -271,7 +271,7 @@ function playM3u8(url) {
                         let start = Date.now() / 1000;
                         if (loadingUlr[context.url]) {
                             console.log("duplicate, abort");
-                            super.abort();
+                            super.load(context, config, callbacks);
                             return;
                         }
                         loadingUlr[context.url] = true;
@@ -279,8 +279,6 @@ function playM3u8(url) {
                             context.url = URL.createObjectURL(await superSuperFetch(context));
                         } catch (e) {
                             console.log("abort");
-                            super.abort();
-                            return;
                         }
                         let end = Date.now() / 1000;
                         console.log("fetch time", end - start);
@@ -288,7 +286,11 @@ function playM3u8(url) {
                         super.load(context, config, callbacks);
                     }
                 },
+                // debug: true,
                 autoStartLoad: true,
+                fragLoadingMaxRetry: 1000,
+                manifestLoadingMaxRetry: 1000,
+                levelLoadingMaxRetry: 1000
             });
             window.hls = hls;
             var m3u8Url = (url);

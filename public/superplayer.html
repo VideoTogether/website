@@ -9,10 +9,10 @@
                         blob: blob,
                         url: e.data.url
                     }, "*")
-                } catch (e) {
+                } catch (err) {
                     window.top.postMessage({
                         method: "fetchResponse",
-                        error: e,
+                        error: err,
                         url: e.data.url
                     }, "*")
                 }
