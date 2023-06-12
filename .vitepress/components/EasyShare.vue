@@ -274,7 +274,8 @@ function playM3u8(url) {
                             super.load(context, config, callbacks);
                             return;
                         }
-                        loadingUlr[context.url] = true;
+                        let originalUrl = context.url;
+                        loadingUlr[originalUrl] = true;
                         try {
                             context.url = URL.createObjectURL(await superSuperFetch(context));
                         } catch (e) {
@@ -282,7 +283,7 @@ function playM3u8(url) {
                         }
                         let end = Date.now() / 1000;
                         console.log("fetch time", end - start);
-                        loadingUlr[context.url] = false;
+                        loadingUlr[originalUrl] = false;
                         super.load(context, config, callbacks);
                     }
                 },
