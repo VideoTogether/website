@@ -49,6 +49,10 @@ export default defineConfig({
     [
       'meta',
       { name: "referrer", content: "no-referrer" }
+    ],
+    [
+      'meta',
+      { name: "Content-Security-Policy", content: "upgrade-insecure-requests" }
     ]
   ],
   locales: {
@@ -76,8 +80,8 @@ export default defineConfig({
   themeConfig: {
     localeLinks: {
       items: [
-        { text: '简体中文', link: '/zh-cn/'},
-        { text: 'English', link: '/en-us/'}
+        { text: '简体中文', link: '/zh-cn/' },
+        { text: 'English', link: '/en-us/' }
       ]
     },
     socialLinks: [
