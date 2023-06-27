@@ -7,7 +7,7 @@ QQ群： 204015847 ，Telegram：https://t.me/videotogether_group
 <!-- 视频出现加载失败，无法同步，卡顿等问题可能是浏览器兼容性导致，推荐安装插件版VideoTogether获得更好的体验 -->
 <h1 id="WechatAlert" style="color:#FF5555">请在浏览器中打开，微信中打开可能无法加载视频！</h1>
 
-<h1 id="StatusText" style="color:#FF5555">视频加载中...</h1>
+<h1 id="StatusText" style="color:#FF5555">视频加载中,可能要20秒...</h1>
 <p style="display:none;" id="LoadTimeoutText">视频加载过久, 该视频可能不支持轻松分享。建议安装插件进行同步</p>
 
 <video class="easyShareVideo" id="hlsVideo" controls autoplay playsinline></video>

@@ -186,7 +186,7 @@ setInterval(() => {
                 fetch(window.videoTogetherExtension.video_together_host + "/beta/counter?key=easyshare_err&failedUrl=" + encodeURIComponent(document.querySelector('#originalVideoUrl').href + "#" + navigator.userAgent));
             }
         }
-    }, 10000);
+    }, 20000);
 }, 500);
 
 function setStatusText(s) {
