@@ -136,6 +136,7 @@ setInterval(() => {
         if (hlsVideo.readyState >= 3) {
             window.m3u8LoadSucc = true;
             hlsVideo.style.display = "block";
+            hlsVideo.VideoTogetherDisabled = false;
             Array.from(videoTogetherExtension.videoMap.keys()).forEach(k => {
                 if (k != hlsVideo.VideoTogetherVideoId) {
                     videoTogetherExtension.videoMap.delete(k);
@@ -155,6 +156,7 @@ setInterval(() => {
                 }
             })
             nativeVideo.style.display = "block";
+            nativeVideo.VideoTogetherDisabled = false;
             setStatusText("");
             return;
         }
@@ -194,6 +196,8 @@ function setStatusText(s) {
 function playM3u8(url) {
     let hlsVideo = document.querySelector("#hlsVideo");
     let nativeVideo = document.querySelector("#nativeVideo");
+    hlsVideo.VideoTogetherDisabled = true;
+    nativeVideo.VideoTogetherDisabled = true;
     try {
         if (Hls.isSupported()) {
             var hls = new Hls({
