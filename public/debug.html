@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Debug</title>
+</head>
+
+<body>
+    <h1>Debug</h1>
+    <input id="name" type="text" placeholder="房间名" />
+    <input id="password" type="text" placeholder="密码" />
+    <button onclick="query()">查询</button>
+    <table id="result"></table>
+    <script>
+        function escapeHTML(str) {
+            str = str + "";
+            return str.replace(
+                /[&<>'"]/g,
+                tag =>
+                ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+        async function query() {
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            // https://vt.panghair.com:5000/room/get?name=test1&password=1
+            var url = "https://vt.panghair.com:5000/room/get?name=" + name + "&password=" + password;
+            const data = await (await fetch(url)).json();
+            console.log(data);
+            var table = document.getElementById("result");
+            table.innerHTML = "";
+            if (data.errorMessage != undefined) {
+                // show error message in table
+                var row = table.insertRow();
+                var cell = row.insertCell();
+                cell.innerHTML = data.errorMessage;
+            } else {
+                // {"name":"test1","lastUpdateClientTime":1706184990.5835001,"lastUpdateServerTime":1706184990.642,"playbackRate":1,"currentTime":0,"paused":true,"url":"https://www.baidu.com/","duration":1000000000,"public":false,"protected":true,"videoTitle":"百度一下，你就知道","backgroundUrl":"","m3u8Url":"","uuid":"14ac6a3e-6d68-4a09-a937-7aa72838b1fb","waitForLoadding":false,"beginLoaddingTimestamp":0,"memberCount":1,"timestamp":1706184991.089}
+                const lastUpdateServerTime = data.lastUpdateServerTime;
+                const playbackRate = data.playbackRate;
+                const url = data.url;
+                const duration = data.duration;
+                const title = data.videoTitle;
+                const waitForLoadding = data.waitForLoadding;
+                const currentTime = data.currentTime;
+                const lastUpdateServerTimeLocalString = new Date(lastUpdateServerTime * 1000).toLocaleString();
+                const paused = data.paused;
+                // show data in table, use innerHtml to insert all node in one line
+                // avoid XSS attack
+                table.innerHTML = "<tr><td>最近更新时间</td><td>" + escapeHTML(lastUpdateServerTimeLocalString) + "</td></tr>" +
+                    "<tr><td>播放倍速</td><td>" + escapeHTML(playbackRate) + "</td></tr>" +
+                    "<tr><td>视频链接</td><td>" + escapeHTML(url) + "</td></tr>" +
+                    "<tr><td>视频时长</td><td>" + escapeHTML(duration) + "秒</td></tr>" +
+                    "<tr><td>视频是否暂停</td><td>" + escapeHTML(paused) + "</td></tr>" +
+                    "<tr><td>视频当前播放位置</td><td>" + escapeHTML(currentTime) + "秒</td></tr>" +
+                    "<tr><td>视频标题</td><td>" + escapeHTML(title) + "</td></tr>" +
+                    "<tr><td>房间成员加载中</td><td>" + escapeHTML(waitForLoadding) + "</td></tr>";
+
+            }
+        }
+    </script>
+</body>
+
+</html>
