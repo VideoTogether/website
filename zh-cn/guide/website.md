@@ -10,7 +10,7 @@
 
 <br/>
 
-将一起看功能添加到Alist请参考：[文档](/archive/memos.html)
+将一起看功能添加到Alist请参考：<a href="/archive/memos.html" target="_blank">文档</a>
 
 项目所有代码全部开源，任何问题都可以加入页面下的交流群咨询
 
