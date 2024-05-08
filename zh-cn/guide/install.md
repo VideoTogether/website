@@ -17,7 +17,7 @@ Windows / macOS 用户必须使用微软 Edge 浏览器
 
 ## 安卓
 
-安卓必须使用 [狐猴浏览器 下载链接](https://www.coolapk.com/apk/296754)
+安卓必须使用 [狐猴浏览器 下载链接](https://lemurbrowser.com/new_version_test/app/zh.html)
 
 使用狐猴浏览器访问 [VideoTogether 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) 安装 VideoTogether 插件
 
