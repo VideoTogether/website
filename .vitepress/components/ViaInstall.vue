@@ -1,7 +1,7 @@
 <script setup lang="ts">
-window.VideoTogetherExtensionUrl = "https://2gether.video/release/extension.user.js"
+window.VideoTogetherExtensionUrl = "https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.user.js"
 
-window.VideoTogetherWebsiteExtensionUrl = "https://2gether.video/release/extension.website.user.js"
+window.VideoTogetherWebsiteExtensionUrl = "https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.website.user.js"
 function ShowAlert(str){
   // alert(str);
   try{
@@ -84,7 +84,7 @@ async function getScript() {
 (function test(){
       const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 3000)
-  fetch("https://2gether.video/release/extension.website.user.js", { signal: controller.signal })
+  fetch("https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.website.user.js", { signal: controller.signal })
   .then(r=>{console.log(r)})
   .catch(e=>{
     let hrefs = document.getElementsByTagName("a");
