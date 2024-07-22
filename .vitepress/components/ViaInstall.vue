@@ -91,13 +91,13 @@ async function getScript() {
 
     for (let i = 0; i <hrefs.length ; i++) {
       if(hrefs[i].href == window.VideoTogetherExtensionUrl){
-       hrefs[i].href = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.user.js"
+       hrefs[i].href = "https://release.chizhou.in/release/extension.user.js"
       }
       if(hrefs[i].href == window.VideoTogetherWebsiteExtensionUrl){
-       hrefs[i].href = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
+       hrefs[i].href = "https://release.chizhou.in/release/extension.website.user.js"
       }
     }
-    window.VideoTogetherWebsiteExtensionUrl = "https://videotogether.oss-cn-hangzhou.aliyuncs.com/release/extension.website.user.js"
+    window.VideoTogetherWebsiteExtensionUrl = "https://release.chizhou.in/release/extension.website.user.js"
     console.error(e);
 
   })
