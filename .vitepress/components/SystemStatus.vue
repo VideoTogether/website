@@ -45,7 +45,7 @@
         .catch(()=>{
             document.querySelector('#SyncServerStatus').style.color='red';
         })
-    fetch("https://api.chizhou.in/statistics")
+    fetch("https://api.xn--6kr25xemln66b.com/statistics")
         .then(()=>{document.querySelector('#ChinaSyncServerStatus').style.color='green'})
         .catch(()=>{document.querySelector('#ChinaSyncServerStatus').style.color='red'})
     fetch("https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.user.js")
