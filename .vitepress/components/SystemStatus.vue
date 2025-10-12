@@ -45,13 +45,13 @@
         .catch(()=>{
             document.querySelector('#SyncServerStatus').style.color='red';
         })
-    fetch("https://api.xn--6kr25xemln66b.com/statistics")
+    fetch("https://api.begin0114.wiki/statistics")
         .then(()=>{document.querySelector('#ChinaSyncServerStatus').style.color='green'})
         .catch(()=>{document.querySelector('#ChinaSyncServerStatus').style.color='red'})
     fetch("https://fastly.jsdelivr.net/gh/VideoTogether/VideoTogether@latest/release/extension.user.js")
         .then(()=>{document.querySelector('#JsServerStatus').style.color='green'})
         .catch(()=>{document.querySelector('#JsServerStatus').style.color='red'})
-    fetch("https://api.xn--6kr25xemln66b.com/release/extension.user.js",{mode:"no-cors"})
+    fetch("https://release.begin0114.wiki/release/extension.user.js",{mode:"no-cors"})
         .then(()=>{document.querySelector('#ChinaJsServerStatus').style.color='green'})
         .catch(()=>{document.querySelector('#ChinaJsServerStatus').style.color='red'})
 
