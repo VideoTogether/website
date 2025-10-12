@@ -313,7 +313,7 @@ function playM3u8(url) {
 
 </script>
 
-<style >
+<style>
 .easyShareVideo {
     max-width: 100%;
     display: none;

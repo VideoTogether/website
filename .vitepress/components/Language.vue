@@ -1,9 +1,9 @@
 <script>
-(function(){
-    if(typeof window != 'undefined'){
-        if(navigator.language.toLowerCase().startsWith('zh')){
+(function () {
+    if (typeof window != 'undefined') {
+        if (navigator.language.toLowerCase().startsWith('zh')) {
             window.location = '/zh-cn/'
-        }else{
+        } else {
             window.location = '/en-us/'
         }
     }

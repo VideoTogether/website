@@ -3,17 +3,19 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 const videoUrl = ref('')
 
-function getFile(e)  {
+function getFile(e) {
   const file = event.target.files[0];
   const url = URL.createObjectURL(file)
   videoUrl.value = url
 }
 
-window.videoTogetherWebsiteSettingUrl = "/v2_website.html";
-
-let script = document.createElement('script');
-script.src ='/release/extension.website.user.js';
-document.head.appendChild(script);
+onMounted(() => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+  window.videoTogetherWebsiteSettingUrl = "/v2_website.html";
+  const script = document.createElement('script');
+  script.src = '/release/extension.website.user.js';
+  document.head.appendChild(script);
+});
 
 </script>
 <template>
@@ -31,6 +33,7 @@ document.head.appendChild(script);
   padding: 5px 10px;
   border-radius: 5px;
 }
+
 .btn:hover {
   background-color: #efefef;
 }
