@@ -16,11 +16,11 @@ If you encounter any issues, feel free to give feedback at: https://github.com/V
 
 ## Android
 
-1. Install [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)
+1. Install [Edge Canary Browser](https://play.google.com/store/apps/details/Microsoft_Edge_Canary?id=com.microsoft.emmx.canary)
 
-2. Visit [VideoTogether in Chrome Store](https://chrome.google.com/webstore/detail/videotogether/dpjiaamadbcfheiamdaamhgpomlkohbn) via Kiwi Browser and install this extension
+2. Visit [VideoTogether in Edge Store](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) via Edge Canary and install this extension
 
-3. Open a new page like google in Kiwi, you will see VideoTogether window
+3. Open a new page like google in Edge Canary, you will see VideoTogether window
 
 ## IOS 15 / iPad OS 15 or above
 
