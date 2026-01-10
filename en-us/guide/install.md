@@ -16,7 +16,7 @@ If you encounter any issues, feel free to give feedback at: https://github.com/V
 
 ## Android
 
-1. Install [Edge Canary Browser](https://play.google.com/store/apps/details/Microsoft_Edge_Canary?id=com.microsoft.emmx.canary)
+1. Install [Edge Browser](https://play.google.com/store/apps/details?id=com.microsoft.emmx)
 
 2. Visit [VideoTogether in Edge Store](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) via Edge Canary and install this extension
 

@@ -17,12 +17,13 @@ Windows / macOS 用户必须使用微软 Edge 浏览器
 
 ## 安卓
 
-安卓必须使用 [Edge Canary浏览器, 下载链接](https://www.ddooo.com/softdown/161594.htm)
+安卓必须使用 [Edge 浏览器, 下载链接](https://m.wandoujia.com/apps/7672441)
 
-查看[安装教程](https://www.bilibili.com/video/BV1pJ1MBrESR/)进行安装, 需要用到的插件 ID 是: eilkilgemogpkebfmhkkapogkiijikli
+使用 Edge 浏览器访问 [VideoTogether 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) 安装 VideoTogether 插件
 
 安装后在Edge Canary浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
 
+**注意，你也可以在手机的应用市场搜索安装，Edge 浏览器版本号必须高于v143，否则无法安装插件**
 
 ## IOS 15 / iPad OS 15 及以上版本
 
