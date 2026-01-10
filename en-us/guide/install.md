@@ -18,9 +18,9 @@ If you encounter any issues, feel free to give feedback at: https://github.com/V
 
 1. Install [Edge Browser](https://play.google.com/store/apps/details?id=com.microsoft.emmx)
 
-2. Visit [VideoTogether in Edge Store](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) via Edge Canary and install this extension
+2. Visit [VideoTogether in Edge Store](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) via Edge and install this extension
 
-3. Open a new page like google in Edge Canary, you will see VideoTogether window
+3. Open a new page like google in Edge, you will see VideoTogether window
 
 ## IOS 15 / iPad OS 15 or above
 

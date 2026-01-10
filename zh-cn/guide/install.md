@@ -21,7 +21,7 @@ Windows / macOS 用户必须使用微软 Edge 浏览器
 
 使用 Edge 浏览器访问 [VideoTogether 插件安装链接](https://microsoftedge.microsoft.com/addons/detail/videotogether/eilkilgemogpkebfmhkkapogkiijikli) 安装 VideoTogether 插件
 
-安装后在Edge Canary浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
+安装后在 Edge 浏览器中打开任意一个新网页即可使用 [使用说明](./introduction.md)
 
 **注意，你也可以在手机的应用市场搜索安装，Edge 浏览器版本号必须高于v143，否则无法安装插件**
 
