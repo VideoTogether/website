@@ -1,6 +1,6 @@
 # 轻松分享 (该功能测试中，遇到问题, 视频加载不了请加群反馈，帮助我们完善该功能)
 
-QQ群： 204015847 ，Telegram：https://t.me/videotogether_group
+QQ群： 204015847
 
 **原视频链接：**<a id="originalVideoUrl"></a>
 
